@@ -1,0 +1,37 @@
+<div class="sidebar">
+    
+    <div> <a href="" ng-click="femdangoShow()">About Femdango</a></div>
+    <div><a href="" ng-click="bechdelShow()">About the Bechdel Test</a></div>
+    <div><a href="" ng-click="resourcesShow()">Additional resources</a></div>
+    <div><a href="" ng-click="contactShow()">Contact Us</a></div>
+    
+
+</div>
+    
+<div class="pageContainer">
+    
+ <div ng-show="femdango">
+     <h1>about femdango</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed turpis neque, dictum in commodo id, ultrices sit amet urna. Aenean tincidunt id urna ornare egestas. Proin et sodales mi. Fusce dapibus iaculis nisi id imperdiet. Donec rutrum nisi a nulla gravida porta. In sed accumsan augue. Suspendisse sodales posuere pellentesque. Integer non tellus vehicula nisi euismod ullamcorper auctor vel augue. Cras ut convallis lectus. Suspendisse at eros condimentum, lobortis nulla ac, porta felis. Quisque tempus mi eu magna vulputate ullamcorper. Cras rhoncus mauris a diam dictum rutrum. Suspendisse eget velit ac urna mollis blandit. Duis suscipit eu velit ac ornare. Nullam id rhoncus felis. Suspendisse vel eros leo.</p>
+</div>
+<div ng-show="bechdel"></a>    
+ <h1>about the bechdel test</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed turpis neque, dictum in commodo id, ultrices sit amet urna. Aenean tincidunt id urna ornare egestas. Proin et sodales mi. Fusce dapibus iaculis nisi id imperdiet. Donec rutrum nisi a nulla gravida porta. In sed accumsan augue. Suspendisse sodales posuere pellentesque. Integer non tellus vehicula nisi euismod ullamcorper auctor vel augue. Cras ut convallis lectus. Suspendisse at eros condimentum, lobortis nulla ac, porta felis. Quisque tempus mi eu magna vulputate ullamcorper. Cras rhoncus mauris a diam dictum rutrum. Suspendisse eget velit ac urna mollis blandit. Duis suscipit eu velit ac ornare. Nullam id rhoncus felis. Suspendisse vel eros leo.</p>
+</div>
+<div ng-show="resources"></a>
+ <h1>additional resources</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed turpis neque, dictum in commodo id, ultrices sit amet urna. Aenean tincidunt id urna ornare egestas. Proin et sodales mi. Fusce dapibus iaculis nisi id imperdiet. Donec rutrum nisi a nulla gravida porta. In sed accumsan augue. Suspendisse sodales posuere pellentesque. Integer non tellus vehicula nisi euismod ullamcorper auctor vel augue. Cras ut convallis lectus. Suspendisse at eros condimentum, lobortis nulla ac, porta felis. Quisque tempus mi eu magna vulputate ullamcorper. Cras rhoncus mauris a diam dictum rutrum. Suspendisse eget velit ac urna mollis blandit. Duis suscipit eu velit ac ornare. Nullam id rhoncus felis. Suspendisse vel eros leo.</p>
+</div>
+<div ng-show="contact"></a> 
+    <h1>contact us</h1>
+    <p>Suspendisse at eros condimentum, lobortis nulla ac, porta felis. Quisque tempus mi eu magna vulputate ullamcorper. Cras rhoncus mauris a diam dictum rutrum. Suspendisse eget velit ac urna mollis blandit. Duis suscipit eu velit ac ornare. Nullam id rhoncus felis. Suspendisse vel eros leo.</p>
+    <form class="containerWidget">
+    <input type="email" ng-model="contactEmail" placeholder="contact email">
+    <textarea type="text" ng-model="contactText" placeholder="tell me everything."></textarea>
+    <button ng-submit="sendEmail()">send</button>
+    </form>
+</div>
+
+    
+    
+</div>

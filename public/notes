@@ -1,0 +1,129 @@
+To do:
+
+index
+    add footer
+
+
+home
+    add galleries
+        new movies (move from browse page)
+        user favorites
+        
+    add sdk from 
+        amazon
+        fandango 
+        netflix
+        
+
+badges for 
+    above and beyond bechdel
+    surprising bechdel fail
+    lgbtq points 
+    poc points
+
+about
+x    ng-show() to toggle between views
+    content
+        femdango bio
+        bechdel info
+        resources
+    contact form function
+
+browse
+x    bechdel api
+ xx   fandango api ---> TMDb api and Omdb
+    make slick wait for api to load? Why does it work on refresh?
+    replace image with title if image isn't available 
+    Get IMDB ID for TMDB API
+    link TMDB API to bechdel!!!!!!!!!!
+    insert bechdel rating
+    change class if bechdel passes
+
+Movie page
+    link "searchMovie" function to page data on load, synch. 
+    recent comments box
+    nominate for badges
+    
+    
+    
+sign in 
+    set up authentication
+    create comment section
+    create favorites list
+    create wishlist
+    
+  
+http://www.myapifilms.com/index.jsp
+-imdb id
+
+-actors
+-actor/actress ***
+-actor trivia ***
+-actor bio ***
+-personal quotes, etc ***
+-actor photos ***
+-filmography ***
+-actor trademark ***
+
+-awards details ***
+-photos
+-trailers ***
+-plot short
+-plot long ***
+
+-similar movies
+-top movies
+-in theaters
+-coming soon
+-popular trailers
+
+www.omdbapi
+-tomato data
+-website
+
+tmdbapi
+-search***
+-search multi***
+-box office
+
+
+
+bechdelapi
+bechdeltext
+dvd release
+
+  
+  
+    
+    
+
+recursion
+function logger(x){
+if(!x) {x = 0;
+consol.log(x)};
+if(x > 6) {return x}
+else {return logger(x+1)}
+}
+functin();
+
+else returns 7 to the scope above it continually until it reaches the global scope. 
+var arr = [1,2,3,4,5,6]
+function sum(arr){
+var sum = 0;
+    for(var i = 0; i < arr.length; i++) {
+    sum += arr[i]; // sum = sum + arr[i]
+    }
+    return sum
+    }
+    sum(arr);
+    
+function arrAdd(arr, sum, index){
+if(!sum) sum = 0;
+if(!index) index = 0;
+if(index === arr.length) {return sum};
+else return summary(arr, sum += arr[index], index + 1)
+}
+arrAdd(arr);
+
+
+
