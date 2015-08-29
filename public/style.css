@@ -208,7 +208,7 @@ img {
     height: 250px;
     width: auto
 }
-.pass, .fail {
+.badges {
     
     opacity: 0;
     width: 164px;
@@ -216,16 +216,10 @@ img {
     text-align: center;
 
 }
-.movieImg:hover .fail{
+.movieImg:hover .badges{
     opacity: 1;
     background-color: crimson;
 }
-.movieImg:hover .pass{
-    opacity: 1;
-    background-color: #46629E;
-}
-
-
 
 .featured {
     width: 100%;

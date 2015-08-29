@@ -1,11 +1,13 @@
 var app = angular.module("femdangoApp", ["firebase", "ngRoute", "ngPromiseExtras"]);
 
-
+app.constant(function(fb) {
+    url: "https://femdango.firebaseio.com/"
+})
 app.config(function($routeProvider){
     $routeProvider
         .when ("/", {
             templateUrl: "home.html",
-            controller: "homeCtrl"
+            controller: "mainCtrl"
         })
         .when("/about", {
             templateUrl: "about.html",
@@ -18,17 +20,22 @@ app.config(function($routeProvider){
                
         .when("/browse/:id", {
             templateUrl: "movie.html",
-            controller: "mainCtrl",
+            controller: "movieCtrl",
             resolve: {
                 movie: function($route, mainService){
                     return mainService.getMoviePage($route.current.params.id)
                 }
             }
         })
-        .when("/browse/bestOfWomen", {
-            templateUrl: "bestof.html",
+        .when("/comments", {
+            templateUrl: "comments.html",
+            controller: "commentsCtrl",
+            resolve: {
+                commentsRef: function(commentsService) {
+                    return commentsService.getComments;
+                }
+            }
         })
-               
         .when("/login", {
             templateUrl: "login.html",
             controller: "loginCtrl"
@@ -37,7 +44,18 @@ app.config(function($routeProvider){
             templateUrl: "passwordReset.html",
             controller: "loginCtrl"
         })
-               
+        .when("/dashboard/:userId", {
+            templateUrl: "dashboard.html",
+            controller: "loginCtrl",
+//            resolve: {
+//                usernameRef: function(loginService, $route){
+//                    return loginService.getUser($route.current.params.userId);
+//                },
+//                favoritesRef: function(loginService, $route){
+//                    return loginService.getFavorites($route.current.params.userId);
+//                }
+//            }
+        })       
         .otherwise({
             redirectTo: "/"
         })

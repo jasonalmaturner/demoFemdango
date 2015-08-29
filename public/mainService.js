@@ -102,40 +102,30 @@
                 var today = new Date();
                 var nextweek = new Date(today.getFullYear(), today.getMonth(), today.getDate()+7);
                 console.log(nextweek);
-                return nextweek.toISOString().split('T')[0];
-                
-            }
-           
-            
+                return nextweek.toISOString().split('T')[0];   
+            };
            var altNextWeek = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate()+7).toISOString().split('T')[0];
             console.log("alt:", altNextWeek);
             
-                function nextyear(){
+            function nextyear(){
                 var today = new Date();
                 var nextyear = new Date(today.getFullYear()+1, today.getMonth(), today.getDate()+7);
-                    console.log(nextyear);
+                        console.log(nextyear);
                 return nextyear= nextyear.toISOString().split('T')[0];
-                    console.log("format:", nextyear)
-                    
-}    
-                
-            
-            
-        
-        
+                        console.log("format:", nextyear)                
+            };    
             var dfd = $q.defer()
-            $http.get(
-                
-                "http://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&primary_release_date.gte=" + nextweek() + "&primary_release_date.lte=" + nextyear() +"&api_key=df49ca00f987ca4b363f4e6291e80c15")
+            $http.get("http://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&primary_release_date.gte=" + nextweek() + "&primary_release_date.lte=" + nextyear() +"&api_key=df49ca00f987ca4b363f4e6291e80c15")
             .then(function(response) {
                  console.log(response);
             dfd.resolve(response.data);
-        }, function(error) {
-            console.log("error: ", error);
-        });
-        return dfd.promise
-    }; 
+            }, function(error) {
+                console.log("error: ", error);
+            });
+            return dfd.promise
+        }; 
   
+        
         
 
     })

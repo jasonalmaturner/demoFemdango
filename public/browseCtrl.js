@@ -1,4 +1,7 @@
 angular.module("femdangoApp").controller("browseCtrl", function($scope, mainService, $timeout) {
+    
+   
+    
 $scope.searchMovies = function() {
 //    console.log($scope.searchMovieTitle);
     mainService.searchMovies($scope.searchMovieTitle)
@@ -38,5 +41,18 @@ $scope.searchMoviesComingSoon = function() {
         
 
     })};
-$scope.searchMoviesComingSoon();    
+$scope.searchMoviesComingSoon();   
+    
+////    $scope.comments = $firebaseArray(commentsRef);
+////    
+////    $scope.comments.$loaded().then(function (comments) {
+////        console.log(comments)});
+////    
+////    $scope.createComment = function(username, comment) {
+////        $scope.comments.$add({
+////            username: usename,
+////            userMovieReview: userMovieReview
+////        });
+//    }
+      
 })

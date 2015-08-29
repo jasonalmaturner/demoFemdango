@@ -1,19 +1,46 @@
-To do:
+To do now:
+
+
+
+home
+    favorites gallery
+    (badges explained)
+    recent reviews
+    
+    logout toggle
+    
+about
+    content 
+        femdango
+        review methods
+        resources
+    contact go live!
+
+reviews
+    show review form when logged in
+    submit reviews
+    show reviews on movie page
+    show recent reviews on home page
+
+Buy tickets!
+    
+To do eventually:
 
 index
-    add footer
-
+    add info to footer
 
 home
     add galleries
         new movies (move from browse page)
         user favorites
+        most badges
         
     add sdk from 
         amazon
         fandango 
         netflix
-        
+     preofessional reviews
+     links to articles
 
 badges for 
     above and beyond bechdel
@@ -94,6 +121,8 @@ dvd release
 
   
   
+
+      
     
     
 

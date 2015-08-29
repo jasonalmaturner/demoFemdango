@@ -1,0 +1,10 @@
+<form name="newComment">
+    <input type="text" ng-model="userMovieReview" placeholder="How femDang-good was this movie?">
+    <input type="text" ng-model="username" placeholder="username"/><button ng-disabled="newComment.$invalid" ng-click="createComment(username, userMovieReview)">Submit</button>
+</form>
+<ul>
+    <li ng-repeat="comment in commentList">
+        <span>{{comment.userMovieReview}}</span>
+        <span>{{comment.username}}</span>
+    </li>
+</ul>
