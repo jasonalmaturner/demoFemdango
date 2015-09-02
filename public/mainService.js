@@ -18,7 +18,7 @@
 //this function needs to use the tmdbId to return the imdbId. 
         this.getMoviePage = function(id) {
             var dfd = $q.defer()
-            $http.get("http://api.themoviedb.org/3/movie/" + id + "?api_key=df49ca00f987ca4b363f4e6291e80c15&page=1&append_to_response=trailers&inclue_video=true")
+            $http.get("http://api.themoviedb.org/3/movie/" + id + "?api_key=df49ca00f987ca4b363f4e6291e80c15&page=1&append_to_response=trailers&include_video=true")
             .then(function(response) {
                 this.getMovie(response.data.imdb_id).then(function(movieData){
                     console.log("this is movie data:", movieData)
@@ -86,7 +86,6 @@
             var dfd = $q.defer()
             $http.get("http://api.themoviedb.org/3/movie/now_playing?api_key=df49ca00f987ca4b363f4e6291e80c15&sort_by=release_date.asc")
             .then(function(response) {
-                 console.log(response);
             dfd.resolve(response.data);
         }, function(error) {
             console.log("error: ", error);
@@ -101,23 +100,21 @@
             function nextweek(){
                 var today = new Date();
                 var nextweek = new Date(today.getFullYear(), today.getMonth(), today.getDate()+7);
-                console.log(nextweek);
                 return nextweek.toISOString().split('T')[0];   
             };
-           var altNextWeek = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate()+7).toISOString().split('T')[0];
-            console.log("alt:", altNextWeek);
+//           var altNextWeek = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate()+7).toISOString().split('T')[0];
+//            console.log("alt:", altNextWeek);
             
-            function nextyear(){
+            function dateInThreeMonths(){
                 var today = new Date();
-                var nextyear = new Date(today.getFullYear()+1, today.getMonth(), today.getDate()+7);
-                        console.log(nextyear);
-                return nextyear= nextyear.toISOString().split('T')[0];
-                        console.log("format:", nextyear)                
+                var dateInThreeMonths = new Date(today.getFullYear(), today.getMonth()+3, today.getDate()+7);
+                    
+                return dateInThreeMonths= dateInThreeMonths.toISOString().split('T')[0];
+                        console.log("format:", dateInThreeMonths)                
             };    
             var dfd = $q.defer()
-            $http.get("http://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&primary_release_date.gte=" + nextweek() + "&primary_release_date.lte=" + nextyear() +"&api_key=df49ca00f987ca4b363f4e6291e80c15")
+            $http.get("http://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&primary_release_date.gte=" + nextweek() + "&primary_release_date.lte=" + dateInThreeMonths() +"&api_key=df49ca00f987ca4b363f4e6291e80c15")
             .then(function(response) {
-                 console.log(response);
             dfd.resolve(response.data);
             }, function(error) {
                 console.log("error: ", error);
@@ -126,6 +123,16 @@
         }; 
   
         
-        
+//This function displays the most popular movies
+        this.searchMoviesPopular = function(title) {
+            var dfd = $q.defer()
+            $http.get("http://api.themoviedb.org/3/discover/movie?vote_average.gte=7&api_key=df49ca00f987ca4b363f4e6291e80c15&sort_by=popularity.desc")
+            .then(function(response) {
+            dfd.resolve(response.data);
+        }, function(error) {
+            console.log("error: ", error);
+        });
+        return dfd.promise
+    }; 
 
     })

@@ -1,6 +1,6 @@
 angular.module("femdangoApp").controller("movieCtrl", function($scope, mainService, $location, movie) {
     
-//    console.log(movie);
+    console.log("movie:", movie);
     
     $scope.movieData = movie;
     

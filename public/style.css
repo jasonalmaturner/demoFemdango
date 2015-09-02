@@ -2,8 +2,10 @@ html, body {
 	margin: 0 auto;
 	width: 100%;
 	height: 100%;
+/*
 	min-width: 300px;
 	max-width: 1200px;
+*/
     font-family: "Century Gothic";
     background-color: #EEEEEE;
 }
@@ -15,10 +17,13 @@ nav {
 	position: fixed;
 	display: flex;
     justify-content: space-around;
+/*
 	min-width: 270px;
 	max-width: 1200px;
+*/
     align-items: baseline;
     z-index: 1;
+    box-sizing: border-box;
 
     
 }
@@ -41,12 +46,15 @@ h1 {
 }
 h2 {
     color: crimson;
-    font-size: 90%;
+    font-size: 105%;
 }
 h3 {
     color: dimgray;
     font-size: 100%;
     font-variant: small-caps;
+}
+h4 {
+    margin-top: 0;
 }
 
 span {
@@ -75,7 +83,7 @@ input:focus {
   
 a {
 	text-decoration: none; 
-    
+    cursor: pointer;
     color:darkgray;
 }
 a:hover {
@@ -84,13 +92,14 @@ a:hover {
 .mainContainer {
     background-color: #EEEEEE;
     padding-top: 10%;
+    padding-bottom: 10%;
     min-height: 100%;
 	margin: 0 auto 
 }
 .wrapWidget {
     display: flex;
     flex-direction: row;
-    width: 80%;
+    width: 100%;
     box-sizing: border-box;
     margin: 5% auto;
     padding: 20px;
@@ -120,7 +129,7 @@ a:hover {
 }
 
 p { 
-    color: black;
+    color: dimgray;
     font-size: 80%;
     text-align: justify;
 }
@@ -149,8 +158,8 @@ button.facebookButton {
     border: 0px;
     border-radius: 2px;
     text-align: center;
-    font-family: "Century Gothic"
-    
+    font-family: "Century Gothic";
+        margin-top: 10px;
 
 }
 
@@ -181,7 +190,7 @@ form.containerWidget {
 }
 
 textarea {
-    height: 200%;
+    height: 100%;
     margin: 5% 0 5% 0%;
     padding: 10px;
     font-family: "Century Gothic";
@@ -208,7 +217,7 @@ img {
     height: 250px;
     width: auto
 }
-.badges {
+.earned-badges {
     
     opacity: 0;
     width: 164px;
@@ -216,7 +225,7 @@ img {
     text-align: center;
 
 }
-.movieImg:hover .badges{
+.movieImg:hover .earned-badges{
     opacity: 1;
     background-color: crimson;
 }
@@ -262,7 +271,8 @@ img {
     object-fit:contain;
 }
 .comments {
-    
+    display: flex;
+    flex-direction: column;
 }
 
 .commentData {
@@ -289,4 +299,94 @@ footer {
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
+}
+
+
+input[type=checkbox] {
+    display: none;
+}
+input[type=checkbox]:checked+.badge {
+    background-image:url('http://goo.gl/3tza1X');
+    background-repeat:no-repeat;
+    background-color:crimson;
+    border-radius:50%;
+    opacity: 1;
+    background-position: -2px -1px;
+}
+input[type=checkbox]:checked+.badge+label {
+    color: crimson;
+}
+
+.badgebox:hover .badge-info {
+    display:block;
+}
+
+.badgebox:hover .badge {
+    background-color: #EEEEEE;
+}
+.badgebox {
+/*    margin:100px;*/
+    float:left;
+    position:relative;
+    clear:both;
+}
+
+.badge-info{
+    width: 100%;
+    background:#FFFFFF;
+    border: 5px solid #DFDFDF;
+    color: #717171;
+    font-size: 13px;
+    position: absolute;
+    text-align:justify;
+    text-transform: uppercase;
+    top: -20px;
+    left:40px;
+    display:none;
+    padding:5px 20px;
+    z-index: 2;
+    
+}
+
+.badge {
+    margin: 2px;
+    float: left;
+    height: 30px;
+    width: 30px;
+    background-position: -2px -1px;
+    border: 2px solid crimson;
+    opacity: .8;
+    background-color: #FFFFFF;
+    background-image:url('http://goo.gl/3tza1X');
+    border-radius: 50%; 
+}
+.show {
+    margin-left: 30px;
+}
+.had {
+    display: flex;
+    flex-direction: column;
+    margin: 0px auto;
+    width: 100%;
+    padding:10px;
+    float: left;
+}
+.badges {
+    margin: 50px auto;
+    width: 50%;
+    border: 1px solid black;
+    height: 30px;
+    padding:10px;
+}
+.badge-box {
+    float: left;
+    margin-left:20px;
+    width:40%
+}
+label {
+    height: 30px;
+    width: 100%;
+    position:relative;
+    display:block;
+    margin-top: 6px;
 }

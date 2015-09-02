@@ -1,16 +1,14 @@
 var app = angular.module("femdangoApp");
-app.controller("commentsCtrl", function($scope, commentsRef, $firebaseArray){
-//    $scope.comments = $firebaseArray(commentsRef);
-//    
-//    $scope.comments.$loaded().then(function (comments) {
-//        console.log(comments)})
-//    
-//    $scope.createComment(username, comment){
-//        $scope.comments.$add({
-//            username: usename,
-//            userMovieReview: userMovieReview
-//        });
-//    }    
-//})
-
+app.controller("commentsCtrl", function($scope, commentsRef, $firebaseObject, $firebaseArray){
+    $scope.comments = $firebaseObject(commentsRef);
+    
+    $scope.comments.$loaded().then(function (comments) {
+        console.log(comments)})
+    
+    $scope.createComment = function(username, comment){
+        $scope.comments.$add({
+            name: name,
+            userMovieReview: userMovieReview
+        });
+    }    
 })

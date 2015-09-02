@@ -24,6 +24,13 @@ reviews
 
 Buy tickets!
     
+    
+ng-click scope.showspinner= true
+resolve 
+scope.showspinner = false
+      
+      
+      
 To do eventually:
 
 index
@@ -121,8 +128,6 @@ dvd release
 
   
   
-
-      
     
     
 

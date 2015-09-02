@@ -1,10 +1,93 @@
-<form name="newComment">
-    <input type="text" ng-model="userMovieReview" placeholder="How femDang-good was this movie?">
-    <input type="text" ng-model="username" placeholder="username"/><button ng-disabled="newComment.$invalid" ng-click="createComment(username, userMovieReview)">Submit</button>
-</form>
-<ul>
-    <li ng-repeat="comment in commentList">
-        <span>{{comment.userMovieReview}}</span>
-        <span>{{comment.username}}</span>
-    </li>
-</ul>
+<div class="wrap">
+    <img scr=<img class="poster" src="http://ia.media-imdb.com/images/M/MV5BMTQ1NDI2MzU2MF5BMl5BanBnXkFtZTgwNTExNTU5NDE@._V1_SX300.jpg">
+    <form name="newComment">
+<!--        <div class="badges">-->
+        <div class="had">
+            <h3>Feminist badges</h3>
+            <div class="badgebox">
+                <input type="checkbox" id="bechdel-badge" name="bechdel">
+                <div class="badge"></div>
+                <label for="bechdel-badge">Bechdel Test</label>
+                <div class="badge-info">Are there two named women talk to each other about something other than a man?</div>
+            </div>
+            <div class="badgebox">
+                <input type="checkbox" id="strong-woman">
+                <div class="badge"></div>
+                <label for="strong-woman">Strong Woman</label>
+                <div class="badge-info">Is there at least one really strong, powerful female character?
+                </div>
+            </div>
+
+            <div class="badgebox">
+                <input type="checkbox" id="mako-mori">
+                <div class="badge"></div>
+                <label for="mako-mori">Mako-Mori</label>
+                <div class="badge-info">Is there at least one lead female character who has her own narrative arc that is not about supporting a man’s story?
+                </div>
+            </div>
+            <div class="badgebox">
+                <input type="checkbox" id="women-in-charge">
+                <div class="badge"></div>
+                <label for="women-in-charge">Women in charge</label>
+                <div class="badge-info">Does the executive team (writers, directors, producers, etc) include women?
+                </div>
+
+            </div>  
+            <div class="badgebox">
+                <input type="checkbox" id="sexy-lamp">
+                <div class="badge"></div>
+                <label for="sexy-lamp">Not just a sexy floor lamp</label>
+                <div class="badge-info">Are the lead famale characters more than "sexy floor lamp" props for the men?
+                </div>
+            </div>
+            <div class="badgebox">
+                <input type="checkbox" id="gender-ratio">
+                <div class="badge"></div>
+                <label for="gender-ratio">Gender Ratio</label>
+                <div class="badge-info">Does the main cast have a balanced ratio of actors and actresses?
+                </div>
+            </div>
+            </div>
+        <div class="had"> 
+            <h3>Related badges</h3>
+    <div class="badgebox">
+        <input type="checkbox" id="lgbt">
+        <div class="badge"></div>
+        <label for="lgbt">LGBTQ</label>
+        <div class="badge-info">Is this movie LGBTQ friendly?
+        </div>
+    </div>    
+    <div class="badgebox">
+        <input type="checkbox" id="poc">
+        <div class="badge"></div>
+        <label for="poc">People of color</label>
+        <div class="badge-info">Does this movie include actors of color?
+        </div>
+        
+    </div>
+    <div class="badgebox">
+        <input type="checkbox" id="diversity">
+        <div class="badge"></div>
+        <label for="diversity">Diversity</label>
+        <div class="badge-info" id="disabilities">Does this movie include accurate and/or positive representations of diverse cultures or countries?
+        </div>
+    </div>    
+    <div class="badgebox">
+        <input type="checkbox" id="disabilities">
+        <div class="badge"></div>
+        <label for="disabilities">Positive Disabilities</label>
+        <div class="badge-info"id="disabilities">Does this movie include actors or characters with disabilities in a positive way?
+        </div>
+    </div>        
+</div>
+<!--        </div>-->
+        <textarea ng-model="userMovieReview" rows="5" cols="80" placeholder="How femDang-good was this movie?" ></textarea><input type="text" ng-model="name" placeholder="What's your name?"/><br><br>
+        
+<button ng-disabled="newComment.$invalid" ng-click="createComment(username, userMovieReview)">Submit</button> </form>
+    <ul>
+        <li ng-repeat="comment in comments">
+            <span>{{comment.userMovieReview}}</span>
+            <span>{{comment.name}}</span>
+        </li>
+    </ul>
+</div>

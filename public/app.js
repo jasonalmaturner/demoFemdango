@@ -7,7 +7,7 @@ app.config(function($routeProvider){
     $routeProvider
         .when ("/", {
             templateUrl: "home.html",
-            controller: "mainCtrl"
+            controller: "browseCtrl"
         })
         .when("/about", {
             templateUrl: "about.html",

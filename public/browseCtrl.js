@@ -42,6 +42,21 @@ $scope.searchMoviesComingSoon = function() {
 
     })};
 $scope.searchMoviesComingSoon();   
+
+   
+$scope.searchMoviesPopular = function() {
+    mainService.searchMoviesPopular()
+    .then(function(response) {
+    $scope.reset = true;
+    $timeout(function(){
+        $scope.reset = false;
+        $scope.popularMovies = response.results
+    });
+    });
+};
+
+$scope.searchMoviesPopular();
+    
     
 ////    $scope.comments = $firebaseArray(commentsRef);
 ////    
