@@ -10,7 +10,7 @@ app.use(express.static(__dirname + "/public"));
 
 
 app.get("/bechdel/:imdbID", function(req, res){
-// console.log(req.params.imdbID);
+ console.log("imdbID:" + req.params.imdbID);
   request.get("http://www.omdbapi.com/?&y=&plot=short&r=json&tomatoes=true&apikey=44112dd6&i="+req.params.imdbID, function(error, response, body){
     if(error) res.status(500).json(err);
       body = JSON.parse(body);
@@ -41,7 +41,8 @@ app.get("/bechdel/:imdbID", function(req, res){
               tomatoConsensus: body.tomatoConsensus,
               bechdelRating: bod.rating,
               bechdeldebatable: bod.dubious,
-              posterUrl: body.Poster
+              posterUrl: body.Poster,
+              //trailersArray: body.trailers.youtube
           })
     
       })

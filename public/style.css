@@ -248,16 +248,10 @@ img {
     z-index: 10;
     position:absolute;
     margin: 50px 50px;
-    display: block;
     
 }
 
-/*
-.movieImg > a:active {
-    
-    display: block;
-}
-*/
+
 
 .featured {
     width: 100%;
@@ -284,6 +278,8 @@ img {
 }
 .left {
     width: 30%; 
+    margin: 5% auto;
+   
 }
 .movieInfo {
     width: 50%;
@@ -335,9 +331,8 @@ input[type=checkbox] {
     display: none;
 }
 input[type=checkbox]:checked+.badge {
-    background-image:url('http://goo.gl/3tza1X');
-    background-repeat:no-repeat;
-    background-color:crimson;
+    border: 3px solid crimson;
+    background-color: crimson;
     border-radius:50%;
     opacity: 1;
     background-position: -2px -1px;
@@ -380,12 +375,11 @@ input[type=checkbox]:checked+.badge+label {
 .badge {
     margin: 2px;
     float: left;
-    height: 30px;
-    width: 30px;
+    height: 35px;
+    width: 35px;
     background-position: -2px -1px;
     border: 2px solid crimson;
     background-color: #FFFFFF;
-    background-image:url('http://goo.gl/3tza1X');
     border-radius: 50%;
     z-index: 3;
 }

@@ -5,16 +5,28 @@
          <form ng-show="loggedin" name="newComment">
              <h2>What did you think of this movie?</h2>
         <div class="had">
+            <div class="badgebox">
+                <input type="checkbox" id="favorite" name="favorite-list">
+                 <img class="badge" src="images/black-heart-outlines-slant-black-heart-outline.svg">
+                <label for="favorite">Add to favorites</label>
+                <div class="badge-info">Love this movie? Add to your favorites!</div>
+            </div>
+            <div class="badgebox">
+                <input type="checkbox" id="interested" name="wish-list">
+                 <img class="badge" src="images/make-a-wish.jpg">
+                <label for="interested">Add to wishlist</label>
+                <div class="badge-info">Interested? Keep track so you can watch it later!</div>
+            </div>
             <h4>Feminist badges</h4>
             <div class="badgebox">
                 <input type="checkbox" id="bechdel-badge" name="bechdel">
-                <div class="badge"></div>
+                 <img class="badge" src="images/Blahblahblah_blah.gif">
                 <label for="bechdel-badge">Bechdel Test</label>
-                <div class="badge-info">Are there two named women talk to each other about something other than a man?</div>
+                <div class="badge-info">Do two named, female characters talk to each other about something other than a man?</div>
             </div>
             <div class="badgebox">
                 <input type="checkbox" id="strong-woman">
-                <div class="badge"></div>
+                <img class="badge" src="images/gym42.png">
                 <label for="strong-woman">Strong Woman</label>
                 <div class="badge-info">Is there at least one really strong, powerful female character?
                 </div>
@@ -22,14 +34,14 @@
 
             <div class="badgebox">
                 <input type="checkbox" id="mako-mori">
-                <div class="badge"></div>
+                <img class="badge" src="images/girlbrain.jpg">
                 <label for="mako-mori">Mako-Mori</label>
                 <div class="badge-info">Is there at least one lead female character who has her own narrative arc that is not about supporting a man’s story?
                 </div>
             </div>
             <div class="badgebox">
                 <input type="checkbox" id="women-in-charge">
-                <div class="badge"></div>
+                <img class="badge" src="images/corporate_woman_6813944.jpg">                
                 <label for="women-in-charge">Women in charge</label>
                 <div class="badge-info">Does the executive team (writers, directors, producers, etc) include women?
                 </div>
@@ -37,14 +49,14 @@
             </div>  
             <div class="badgebox">
                 <input type="checkbox" id="sexy-lamp">
-                <div class="badge"></div>
+                <img class="badge" src="images/leglamp.jpeg">
                 <label for="sexy-lamp">Not a sexy floor lamp</label>
                 <div class="badge-info">Are the lead famale characters more than "sexy floor lamp" props for the male characters?
                 </div>
             </div>
             <div class="badgebox">
                 <input type="checkbox" id="gender-ratio">
-                <div class="badge"></div>
+                <img class="badge" src="images/Random8-150ppp.jpg">
                 <label for="gender-ratio">Gender Ratio</label>
                 <div class="badge-info">Does the main cast have a balanced ratio of actors and actresses?
                 </div>
@@ -53,14 +65,14 @@
             <h4>Related badges</h4>
     <div class="badgebox">
         <input type="checkbox" id="lgbt">
-        <div class="badge"></div>
+        <img class="badge" src="images/rainbow.png">
         <label for="lgbt">LGBTQ</label>
         <div class="badge-info">Is this movie LGBTQ friendly?
         </div>
     </div>    
     <div class="badgebox">
         <input type="checkbox" id="poc">
-        <div class="badge"></div>
+        <img class="badge" src="images/stock-vector-vector-set-of-different-african-american-woman-app-icons-in-trendy-flat-style-259751516.jpg">
         <label for="poc">People of color</label>
         <div class="badge-info">Does this movie include actors of color?
         </div>
@@ -68,20 +80,20 @@
     </div>
     <div class="badgebox">
         <input type="checkbox" id="diversity">
-        <div class="badge"></div>
+        <img class="badge" src="images/world91.png">
         <label for="diversity">Diversity</label>
         <div class="badge-info" id="diversity">Does this movie include accurate and/or positive representations of diverse cultures or countries?
         </div>
     </div>    
     <div class="badgebox">
         <input type="checkbox" id="disabilities">
-        <div class="badge"></div>
+        <img class="badge" src="images/35957697-Disabled-sports-design-concept-with-handicapped-people-playing-football-fencing-cycling-icons-set-is-Stock-Vector.jpg">
         <label for="disabilities">Positive Disabilities</label>
         <div class="badge-info"id="disabilities">Does this movie include actors or characters with disabilities in a positive way?
         </div>
     </div>        
 </div>
-        <textarea ng-model="userMovieReview" rows="4" cols="30" placeholder="How femDang-good was this movie?" ></textarea><input type="text" ng-model="name" placeholder="What's your name?"/><br><br>
+        <textarea ng-model="userMovieReview" rows="4" cols="25" placeholder="How femDang-good was this movie?" ></textarea><input type="text" ng-model="name" placeholder="What's your name?"/><br><br>
         
 <button ng-disabled="newComment.$invalid" ng-click="createComment(username, userMovieReview)">Submit</button> </form>
         

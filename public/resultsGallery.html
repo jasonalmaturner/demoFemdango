@@ -1,22 +1,12 @@
-<div class="movieImg" ng-repeat="movie in data">
+<div ng-init="checked = false" class="movieImg" ng-repeat="movie in data">
 <!--     <onclick="document.getElementById('loading').style.display = 'block'">-->
-     <div class="loading">
+     <div class="loading" ng-show="checked">
     </div>
-    <a href={{"#/browse/"+movie.id}}>
+    <a  ng-click="checked = true" href={{"#/browse/"+movie.id}}>
          <img ng-src="https://image.tmdb.org/t/p/w185{{movie.poster_path}}">
         
      <div class="earned-badges"><div class="badge"></div><div class="badge"></div><div class="badge"></div><div class="badge"></div><div class="badge"></div><div class="badge"></div><div class="badge"></div><div class="badge"></div></div>
     </a>
 </div>
-<!--
-<script>
-        $(function(){
-        $(".movieImg").on("click", function(){
-            debugger;
-            $(".loading").show();
-        })
-        });
-    </script>
--->
 
 

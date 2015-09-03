@@ -1,4 +1,4 @@
-angular.module("femdangoApp").controller("loginCtrl", function($scope, loginService, $location){
+angular.module("femdangoApp").controller("loginCtrl", function($scope, loginService, mainService, $timeout, $location){
 
 $scope.user = {};
 $scope.resetPasswordForm = true;
@@ -46,4 +46,17 @@ $scope.resetPassword = function (user) {
 //  };
 
 
+//This function finds movies to add to favorites list
+$scope.searchMovies = function() {
+//    console.log($scope.searchMovieTitle);
+    mainService.searchMovies($scope.searchMovieTitle)
+    .then(function(response) {
+        $scope.reset = true;
+        $timeout(function(){
+            $scope.reset = false;
+            $scope.searchResults = response;
+        })
+
+//        console.log(response);
+    })};
 })

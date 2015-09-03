@@ -54,7 +54,19 @@ $scope.searchMoviesPopular = function() {
 };
 
 $scope.searchMoviesPopular();
-    
+ 
+    $scope.userFavoritesList = function() {
+    mainService.userGetFavoritesList()
+    .then(function(response) {
+        $scope.reset = true;
+        $timeout(function(){
+            $scope.reset = false;
+            $scope.userFavorites = response.results;
+        })
+        
+
+    })};
+$scope.searchMoviesComingSoon();  
     
 ////    $scope.comments = $firebaseArray(commentsRef);
 ////    

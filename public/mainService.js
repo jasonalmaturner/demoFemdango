@@ -134,4 +134,9 @@
         return dfd.promise
     }; 
 
+//This function adds muser favorites to slider
+        this.userGetFavoritesList = function(title) {
+            var userFavorites = [];        
+        }
+        
     })

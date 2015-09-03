@@ -1,3 +1,11 @@
-<div class="wrap"<h1>Profile</h1>
-<h2>email: {{userData.password.email}}</h2>
-<slick-search ng-if="!reset" data="favoriteList"></slick-search>
+<div class="wrap"><h1>Profile</h1>
+<h3>signed in as: {{userData.password.email}}</h3>
+
+<h2>Keep track of your favorite movies!</h2>
+<slick-favorites ng-if="!reset" data="userFavorites"></slick-favorites>
+<button class="js-add-slide">Add movies to your "Favorites List"</button>
+<button class="js-remove-slide">Remove movies from your "Favorites List"</button>
+<h2>Keep track of your wishlist!</h2>
+<slick-favorites ng-if="!reset" data="wishlist"></slick-favorites>
+<button class="js-add-slide">Add movies to your "wishlist"</button>
+<button class="js-remove-slide">Remove movies from your "wishlist"</button>
