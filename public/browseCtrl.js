@@ -1,7 +1,5 @@
 angular.module("femdangoApp").controller("browseCtrl", function($scope, mainService, $timeout) {
     
-   
-    
 $scope.searchMovies = function() {
 //    console.log($scope.searchMovieTitle);
     mainService.searchMovies($scope.searchMovieTitle)

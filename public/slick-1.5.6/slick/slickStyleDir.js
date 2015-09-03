@@ -1,6 +1,22 @@
 var app = angular.module("femdangoApp");
 
-//app.directive("slickStyle", function($timeout){
+$('.add-remove').slick({
+  slidesToShow: 3,
+  slidesToScroll: 3
+});
+$('.js-add-slide').on('click', function() {
+  slideIndex++;
+  $('.add-remove').slick('slickAdd','<div><h3>' + slideIndex + '</h3></div>');
+});
+
+$('.js-remove-slide').on('click', function() {
+  $('.add-remove').slick('slickRemove',slideIndex - 1);
+  if (slideIndex !== 0){
+    slideIndex--;
+  }
+});
+
+//app.directive("slickFavorites", function($timeout){
 // return {
 //   restrict: 'EA',
 //   link: function(scope,element,attrs) {
@@ -98,21 +114,12 @@ app.directive("slickSearch", function($timeout){
          $(element).slick(options);
         });
        
-//       scope.$watchCollection('data', function(newVal, oldVal){
-//           var slider = $(element);
-//           slider.slick('unslick');
-//           
-//           var list = $('.slick-list')
-//           list.remove();
-//           $timeout(function() {
-//               $(element).slick(options);
-//           });
-//           
-//           
-//        })
      },
      controller: function($scope) {
-         
+//    $(".movieImg").click(function(){
+//    debugger;
+//    $(".loading").show();
+//});
      },
      
      templateUrl: "resultsGallery.html"

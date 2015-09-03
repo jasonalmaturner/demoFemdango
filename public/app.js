@@ -1,8 +1,8 @@
 var app = angular.module("femdangoApp", ["firebase", "ngRoute", "ngPromiseExtras"]);
 
 app.constant(function(fb) {
-    url: "https://femdango.firebaseio.com/"
-})
+    url: "https://femdango.firebaseio.com/";
+});
 app.config(function($routeProvider){
     $routeProvider
         .when ("/", {
@@ -23,7 +23,7 @@ app.config(function($routeProvider){
             controller: "movieCtrl",
             resolve: {
                 movie: function($route, mainService){
-                    return mainService.getMoviePage($route.current.params.id)
+                    return mainService.getMoviePage($route.current.params.id);
                 }
             }
         })
@@ -31,7 +31,7 @@ app.config(function($routeProvider){
             templateUrl: "comments.html",
             controller: "commentsCtrl",
             resolve: {
-                commentsRef: function(commentsService) {
+                commentsRef: function (commentsService) {
                     return commentsService.getComments;
                 }
             }
@@ -46,7 +46,7 @@ app.config(function($routeProvider){
         })
         .when("/dashboard/:userId", {
             templateUrl: "dashboard.html",
-            controller: "loginCtrl",
+            controller: "loginCtrl"
 //            resolve: {
 //                usernameRef: function(loginService, $route){
 //                    return loginService.getUser($route.current.params.userId);
@@ -55,8 +55,17 @@ app.config(function($routeProvider){
 //                    return loginService.getFavorites($route.current.params.userId);
 //                }
 //            }
-        })       
+        })
+        .when("/resultsgallery", {
+            templateUrl: "resultsGallery.html",
+            controller: "browseCtrl",
+            resolve: {
+                commentsRef: function (commentsService) {
+                    return commentsService.getComments;
+                }
+            }
+        })
         .otherwise({
             redirectTo: "/"
         })
-})
+});

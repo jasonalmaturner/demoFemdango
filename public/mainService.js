@@ -1,5 +1,4 @@
     angular.module("femdangoApp").service("mainService", function($http, $q) {
-
 //This function inputs data onto the movie page
         this.getMovie = function(imdbId) {
             console.log("imdbId:", imdbId);
@@ -105,15 +104,15 @@
 //           var altNextWeek = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate()+7).toISOString().split('T')[0];
 //            console.log("alt:", altNextWeek);
             
-            function dateInThreeMonths(){
+            function dateInTwoMonths(){
                 var today = new Date();
-                var dateInThreeMonths = new Date(today.getFullYear(), today.getMonth()+3, today.getDate()+7);
+                var dateInTwoMonths = new Date(today.getFullYear(), today.getMonth()+2, today.getDate()+7);
                     
-                return dateInThreeMonths= dateInThreeMonths.toISOString().split('T')[0];
-                        console.log("format:", dateInThreeMonths)                
+                return dateInTwoMonths= dateInTwoMonths.toISOString().split('T')[0];
+                        console.log("format:", dateInTwoMonths)                
             };    
             var dfd = $q.defer()
-            $http.get("http://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&primary_release_date.gte=" + nextweek() + "&primary_release_date.lte=" + dateInThreeMonths() +"&api_key=df49ca00f987ca4b363f4e6291e80c15")
+            $http.get("http://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&primary_release_date.gte=" + nextweek() + "&primary_release_date.lte=" + dateInTwoMonths() +"&api_key=df49ca00f987ca4b363f4e6291e80c15")
             .then(function(response) {
             dfd.resolve(response.data);
             }, function(error) {

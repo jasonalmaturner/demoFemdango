@@ -1,21 +1,117 @@
 <div class="wrap"><h1>Popular movies on our radar:</h1>
+    
 <slick-search ng-if="!reset" data="popularMovies"></slick-search>
 
     <div class="wrapWidget">
         <div class="miniWidget">
-    <h2>Recent Comments</h2>
-    <p>FemNancy24 | 8/1/2015 <br><br>
-        <strong>Cars</strong> <br>
-        femDang! *****<br>
-        LGBTQ **<br>
-        POC ***<br>
-        Ut et ipsum sem. Vivamus in dictum libero. Etiam et urna nibh. Ut cursus, leo dictum aliquam ullamcorper, nisl dolor semper urna, ut aliquet quam mauris sit amet diam. </p></div>
+    <div class="comments">
+        <h2>RECENT REVIEWS</h2>
+        <div class="commentData">
+            <div class="commentText">
+<!--                <p>{{comment.userMovieReview}}</p><br>-->
+<!--                <span>posted on {{comment.postedDate}} by {{comment.name}}</span>-->
+<!--                <div class="badge" ng-src="{{comment.earnedBagesArray}}></div><div class="badge"></div>-->
+<!--                dummy code:-->
+                <p>"I loved this movie and can't wait for a sequel!"<br>
+                    <span>posted on August 14, 2015 by Georgie42</span></p>
+                <div class="badge"></div><div class="badge"></div>
+            </div>
+        </div>
+        <div class="commentData">
+            <div class="commentText">
+                <p>"After two miserable sequels, the world had no reason to expect anything good from another Jurassic Park movie...yet, in spite of every ill omen, Jurassic World turns out to be the most enjoyable blockbuster in recent memory."<br>
+                    <span>posted on August 29, 2015 by Steve</span></p>
+                <div class="badge"></div><div class="badge"></div><div class="badge"></div><div class="badge"></div>
+            </div>
+        </div>
+        <div class="commentData">
+            <div class="commentText">
+                <p>"It's a fun summer ride, but it won't keep you coming back over and over."<br>
+                    <span>posted on August 5, 2015 by Josh Terry</span></p>
+                <div class="badge"></div><div class="badge"></div>
+            </div>
+        </div></div>
+        </div>
      <div class="miniWidget">
-         <h3>lorem ipsum</h3>
-         <p>Ut et ipsum sem. Vivamus in dictum libero. Etiam et urna nibh. Ut cursus, leo dictum aliquam ullamcorper, nisl dolor semper urna, ut aliquet quam mauris sit amet diam. Duis ullamcorper est sit amet enim auctor, ut tristique nibh eleifend. Sed in mi eu magna dictum rutrum non commodo massa.</p></div>  
-        <div class="miniWidget">
-        <h3>efficitur aliquet</h3>
-    <p>Nunc et sapien efficitur, aliquet ipsum eget, convallis libero. Aenean malesuada sem vitae sollicitudin hendrerit. Aenean semper ultricies velit ut feugiat.</p>
+        <h3>What do the badges mean?</h3>
+    <div class="had">
+            <h4>Feminist badges</h4>
+            <div class="badgebox">
+                <input type="checkbox" id="bechdel-badge" name="bechdel">
+                <div class="badge"></div>
+                <label for="bechdel-badge">Bechdel Test</label>
+                <div class="badge-info">Are there two named women talk to each other about something other than a man?</div>
+            </div>
+            <div class="badgebox">
+                <input type="checkbox" id="strong-woman">
+                <div class="badge"></div>
+                <label for="strong-woman">Strong Woman</label>
+                <div class="badge-info">Is there at least one really strong, powerful female character?
+                </div>
+            </div>
+
+            <div class="badgebox">
+                <input type="checkbox" id="mako-mori">
+                <div class="badge"></div>
+                <label for="mako-mori">Mako-Mori</label>
+                <div class="badge-info">Is there at least one lead female character who has her own narrative arc that is not about supporting a man’s story?
+                </div>
+            </div>
+            <div class="badgebox">
+                <input type="checkbox" id="women-in-charge">
+                <div class="badge"></div>
+                <label for="women-in-charge">Women in charge</label>
+                <div class="badge-info">Does the executive team (writers, directors, producers, etc) include women?
+                </div>
+
+            </div>  
+            <div class="badgebox">
+                <input type="checkbox" id="sexy-lamp">
+                <div class="badge"></div>
+                <label for="sexy-lamp">Not a sexy floor lamp</label>
+                <div class="badge-info">Are the lead famale characters more than "sexy floor lamp" props for the male characters?
+                </div>
+            </div>
+            <div class="badgebox">
+                <input type="checkbox" id="gender-ratio">
+                <div class="badge"></div>
+                <label for="gender-ratio">Gender Ratio</label>
+                <div class="badge-info">Does the main cast have a balanced ratio of actors and actresses?
+                </div>
+            </div><br>
+            
+            <h4>Related badges</h4>
+    <div class="badgebox">
+        <input type="checkbox" id="lgbt">
+        <div class="badge"></div>
+        <label for="lgbt">LGBTQ</label>
+        <div class="badge-info">Is this movie LGBTQ friendly?
+        </div>
+    </div>    
+    <div class="badgebox">
+        <input type="checkbox" id="poc">
+        <div class="badge"></div>
+        <label for="poc">People of color</label>
+        <div class="badge-info">Does this movie include actors of color?
+        </div>
+        
+    </div>
+    <div class="badgebox">
+        <input type="checkbox" id="diversity">
+        <div class="badge"></div>
+        <label for="diversity">Diversity</label>
+        <div class="badge-info" id="diversity">Does this movie include accurate and/or positive representations of diverse cultures or countries?
+        </div>
+    </div>    
+    <div class="badgebox">
+        <input type="checkbox" id="disabilities">
+        <div class="badge"></div>
+        <label for="disabilities">Positive Disabilities</label>
+        <div class="badge-info"id="disabilities">Does this movie include actors or characters with disabilities in a positive way?
+        </div>
+    </div>        
+</div>
+         <h2><a href="#/login">Sign in</a> to assign badges!</h2>
         </div>
     </div>
 </div>    

@@ -22,7 +22,7 @@ nav {
 	max-width: 1200px;
 */
     align-items: baseline;
-    z-index: 1;
+    z-index: 100;
     box-sizing: border-box;
 
     
@@ -54,7 +54,7 @@ h3 {
     font-variant: small-caps;
 }
 h4 {
-    margin-top: 0;
+    margin-top: 5px;
 }
 
 span {
@@ -65,6 +65,9 @@ span {
     color:dimgray;
     
 }
+
+
+
 input {
     line-height: 2.5;
     font-family:"Century Gothic";
@@ -89,6 +92,9 @@ a {
 a:hover {
     color:crimson;
 }
+
+
+
 .mainContainer {
     background-color: #EEEEEE;
     padding-top: 10%;
@@ -106,6 +112,7 @@ a:hover {
 }
 .miniWidget {
     padding: 0 3%;
+    width: 45%;
 
 }
 
@@ -116,7 +123,6 @@ a:hover {
     box-sizing: border-box;
     margin: auto;
     padding: 20px;
-/*    border: solid 1px crimson;*/
 }
 
 .submitInput {
@@ -220,15 +226,38 @@ img {
 .earned-badges {
     
     opacity: 0;
-    width: 164px;
-    line-height: 2;
-    text-align: center;
+    width: 165px;
+    margin-top: 0%;
 
 }
+
 .movieImg:hover .earned-badges{
     opacity: 1;
-    background-color: crimson;
 }
+
+
+.loading {
+    background-position: center center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    border: 1px solid #eeeeee;
+    opacity: .8; 
+    height: 62px; 
+    width: 62px; 
+    background-image: url("spiffygif_62x62.gif");
+    z-index: 10;
+    position:absolute;
+    margin: 50px 50px;
+    display: block;
+    
+}
+
+/*
+.movieImg > a:active {
+    
+    display: block;
+}
+*/
 
 .featured {
     width: 100%;
@@ -344,7 +373,7 @@ input[type=checkbox]:checked+.badge+label {
     left:40px;
     display:none;
     padding:5px 20px;
-    z-index: 2;
+    z-index: 5;
     
 }
 
@@ -355,10 +384,10 @@ input[type=checkbox]:checked+.badge+label {
     width: 30px;
     background-position: -2px -1px;
     border: 2px solid crimson;
-    opacity: .8;
     background-color: #FFFFFF;
     background-image:url('http://goo.gl/3tza1X');
-    border-radius: 50%; 
+    border-radius: 50%;
+    z-index: 3;
 }
 .show {
     margin-left: 30px;
