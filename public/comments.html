@@ -1,93 +1,110 @@
+<!-- NOT IN USE-->
+
 <div class="wrap">
-    <img scr=<img class="poster" src="http://ia.media-imdb.com/images/M/MV5BMTQ1NDI2MzU2MF5BMl5BanBnXkFtZTgwNTExNTU5NDE@._V1_SX300.jpg">
-    <form name="newComment">
-<!--        <div class="badges">-->
-        <div class="had">
-            <h3>Feminist badges</h3>
-            <div class="badgebox">
-                <input type="checkbox" id="bechdel-badge" name="bechdel">
-                <div class="badge"></div>
-                <label for="bechdel-badge">Bechdel Test</label>
-                <div class="badge-info">Are there two named women talk to each other about something other than a man?</div>
+
+
+     <div class="had" id="user-lists">
+            <div class="badgebox" ng-show="loggedin">
+                <input type="checkbox" id="favorite" ng-model="badges.favorite">
+                 <img class="badge" src="images/heart8.png">
+                <label for="favorite">Add to favorites</label>
             </div>
+            <div class="badgebox" ng-show="loggedin">
+                <input type="checkbox" id="wishList" ng-model="badges.wishList">
+                 <img class="badge" src="images/food48.png">
+                <label for="wishList">Add to wishlist</label>
+            </div>
+             </div>
+         <form ng-show="loggedin" name="newComment">
+             <h2>REVIEW THIS MOVIE AND ASSIGN SOME BADGES!</h2>
+            <div class="had">
+            <h4>Feminist badges</h4>
             <div class="badgebox">
-                <input type="checkbox" id="strong-woman">
-                <div class="badge"></div>
-                <label for="strong-woman">Strong Woman</label>
-                <div class="badge-info">Is there at least one really strong, powerful female character?
-                </div>
+                <input type="checkbox"  ng-model="badges.bechdel" id="bechdel" >
+                 <img class="badge" src="images/standing75.png">
+                <label for="bechdel">Bechdel Test</label>
+                <div class="badge-info">Do two named, female characters talk to each other about something other than a man?</div>
             </div>
 
             <div class="badgebox">
-                <input type="checkbox" id="mako-mori">
-                <div class="badge"></div>
-                <label for="mako-mori">Mako-Mori</label>
+                <input type="checkbox"  ng-model="badges.mako" id="mako" >
+                <img class="badge" src="images/person242.png">
+                <label for="mako">Mako-Mori</label>
                 <div class="badge-info">Is there at least one lead female character who has her own narrative arc that is not about supporting a man’s story?
                 </div>
             </div>
             <div class="badgebox">
-                <input type="checkbox" id="women-in-charge">
-                <div class="badge"></div>
-                <label for="women-in-charge">Women in charge</label>
+                <input type="checkbox"  ng-model="badges.executive" id="executive" >
+                <img class="badge" src="images/loudspeaker16.png">                
+                <label for="executive">Women in executive roles</label>
                 <div class="badge-info">Does the executive team (writers, directors, producers, etc) include women?
                 </div>
 
             </div>  
             <div class="badgebox">
-                <input type="checkbox" id="sexy-lamp">
-                <div class="badge"></div>
-                <label for="sexy-lamp">Not just a sexy floor lamp</label>
-                <div class="badge-info">Are the lead famale characters more than "sexy floor lamp" props for the men?
-                </div>
-            </div>
-            <div class="badgebox">
-                <input type="checkbox" id="gender-ratio">
-                <div class="badge"></div>
-                <label for="gender-ratio">Gender Ratio</label>
+                <input type="checkbox"  ng-model="badges.ratio" id="ratio" >
+                <img class="badge" src="images/female102.svg">
+                <label for="ratio">Gender Ratio</label>
                 <div class="badge-info">Does the main cast have a balanced ratio of actors and actresses?
                 </div>
-            </div>
-            </div>
-        <div class="had"> 
-            <h3>Related badges</h3>
+            </div><br>
+            
+            <h4>Related badges</h4>
     <div class="badgebox">
-        <input type="checkbox" id="lgbt">
-        <div class="badge"></div>
+        <input type="checkbox"  ng-model="badges.lgbt" id="lgbt" >
+        <img class="badge" src="images/two15.png">
         <label for="lgbt">LGBTQ</label>
         <div class="badge-info">Is this movie LGBTQ friendly?
         </div>
     </div>    
     <div class="badgebox">
-        <input type="checkbox" id="poc">
-        <div class="badge"></div>
-        <label for="poc">People of color</label>
-        <div class="badge-info">Does this movie include actors of color?
-        </div>
-        
-    </div>
-    <div class="badgebox">
-        <input type="checkbox" id="diversity">
-        <div class="badge"></div>
+        <input type="checkbox"  ng-model="badges.diversity" id="diversity" >
+        <img class="badge" src="images/world91.png">
         <label for="diversity">Diversity</label>
-        <div class="badge-info" id="disabilities">Does this movie include accurate and/or positive representations of diverse cultures or countries?
+        <div class="badge-info">Does this movie include named actors of color and/or named characters who represent diverse cultures or countries?
         </div>
     </div>    
     <div class="badgebox">
-        <input type="checkbox" id="disabilities">
-        <div class="badge"></div>
+        <input type="checkbox"  ng-model="badges.disabilities" id="disabilities" >
+        <img class="badge" src="images/wheelchair10.png">
         <label for="disabilities">Positive Disabilities</label>
-        <div class="badge-info"id="disabilities">Does this movie include actors or characters with disabilities in a positive way?
+        <div class="badge-info">Does this movie include actors or characters with disabilities in a positive way?
         </div>
     </div>        
 </div>
-<!--        </div>-->
-        <textarea ng-model="userMovieReview" rows="5" cols="80" placeholder="How femDang-good was this movie?" ></textarea><input type="text" ng-model="name" placeholder="What's your name?"/><br><br>
+             <textarea ng-model="userMovieReview" rows="4" cols="25" placeholder="How femDang-good was this movie?"></textarea>
+    <input type="text" ng-model="name" placeholder="What's your name?"/><br><br>
         
-<button ng-disabled="newComment.$invalid" ng-click="createComment(username, userMovieReview)">Submit</button> </form>
-    <ul>
-        <li ng-repeat="comment in comments">
-            <span>{{comment.userMovieReview}}</span>
-            <span>{{comment.name}}</span>
-        </li>
-    </ul>
+<button id="commentButton" ng-disabled="newComment.$invalid" ng-click="createComment()">Submit</button> </form>
+        <div ng-repeat="comment in comments">
+            
+        <div class="earned-badges">
+            <div class="badgebox" ng-show={{comment.badges.bechdel}}>
+                 <img class="badge" src="images/standing75.png">
+            </div>
+            <div class="badgebox" ng-show={{comment.badges.mako}}>
+                <img class="badge" src="images/person242.png">
+            </div>
+            <div class="badgebox" ng-show={{comment.badges.executive}}>
+                <img class="badge" src="images/loudspeaker16.png">                             </div>
+            <div class="badgebox" ng-show={{comment.badges.ratio}}>
+                <img class="badge" src="images/female102.svg">
+            </div>  
+            <div class="badgebox" ng-show={{comment.badges.lgbt}}>
+                <img class="badge" src="images/two15.png">
+            </div> 
+            <div class="badgebox" ng-show={{comment.badges.diversity}}>
+                <img class="badge" src="images/world91.png">
+            </div>
+            <div class="badgebox" ng-show={{comment.badges.disabilities}}>
+                <img class="badge" src="images/wheelchair10.png">
+            </div>
+
+        </div>
+            <p>{{comment.text}}</p>
+            <span> by {{comment.user}} @</span>
+            <span>{{comment.createdAt}}</span><br><br>
+           
+    </div>
+   
 </div>

@@ -4,98 +4,155 @@
 
     <div class="wrapWidget">
         <div class="miniWidget">
-    <div class="comments">
+             <div class="comments">
+        <h2>RECENT REVIEWS</h2>
+        
+   <div ng-repeat="comment in comments | orderBy: 'createdAt': reverse | limitTo: 5"  ng-class-odd="'odd'" ng-class-even="'even'">
+          <h2><a href="#/browse/" + {{comment.movieId}}>{{comment.movieTitle}}</a> </h2>
+        <div class="earned-badges">
+            <div class="badgebox" ng-show={{comment.badges.bechdel}}>
+                 <img class="badge" src="images/standing75.png">
+            </div>
+            <div class="badgebox" ng-show={{comment.badges.mako}}>
+                <img class="badge" src="images/person242.png">
+            </div>
+            <div class="badgebox" ng-show={{comment.badges.executive}}>
+                <img class="badge" src="images/loudspeaker16.png">
+            </div>
+            <div class="badgebox" ng-show={{comment.badges.ratio}}>
+                <img class="badge" src="images/female102.svg">
+            </div>  
+            <div class="badgebox" ng-show={{comment.badges.lgbt}}>
+                <img class="badge" src="images/two15.png">
+            </div> 
+            <div class="badgebox" ng-show={{comment.badges.diversity}}>
+                <img class="badge" src="images/world91.png">
+            </div>
+            <div class="badgebox" ng-show={{comment.badges.disabilities}}>
+                <img class="badge" src="images/wheelchair10.png">
+            </div>
+
+        </div>
+            <p>{{comment.text}}</p>
+      
+            <span> by {{comment.user}} @</span>
+            <span>{{comment.createdAt}}</span>
+           
+        </div>     
+ 
+    </div>
+<!--    <div class="comments">-->
+<!--
         <h2>RECENT REVIEWS</h2>
         <div class="commentData">
             <div class="commentText">
+-->
 <!--                <p>{{comment.userMovieReview}}</p><br>-->
 <!--                <span>posted on {{comment.postedDate}} by {{comment.name}}</span>-->
 <!--                <div class="badge" ng-src="{{comment.earnedBagesArray}}></div><div class="badge"></div>-->
 <!--                dummy code:-->
-                <p>"I loved this movie and can't wait for a sequel!"<br>
+<!--                <p>"I loved this movie and can't wait for a sequel!"<br>-->
+<!--
                     <span>posted on August 14, 2015 by Georgie42</span></p>
-                <div class="badge"></div><div class="badge"></div>
+                 <div class="earned-badges"><div class="badgebox">
+                    <img class="badge" src="images/world91.png">
+                </div> 
+                <div class="badgebox">
+                    <img class="badge" src="images/two15.png">   
+                </div>
+                </div>
             </div>
         </div>
         <div class="commentData">
             <div class="commentText">
                 <p>"After two miserable sequels, the world had no reason to expect anything good from another Jurassic Park movie...yet, in spite of every ill omen, Jurassic World turns out to be the most enjoyable blockbuster in recent memory."<br>
                     <span>posted on August 29, 2015 by Steve</span></p>
-                <div class="badge"></div><div class="badge"></div><div class="badge"></div><div class="badge"></div>
+    <div class="earned-badges">
+-->
+<!--        <div class="badgebox">-->
+<!--
+            <img class="badge" src="images/loudspeaker16.png">
+        </div>
+         <div class="badgebox">
+            <img class="badge" src="images/female102.svg">
+        </div> 
+-->
+<!--
+         <div class="badgebox">
+            <img class="badge" src="images/two15.png">  
+        </div>
+             <div class="badgebox">
+            <img class="badge" src="images/female139.png">  
+        </div>
+                </div>
             </div>
         </div>
+-->
+<!--
         <div class="commentData">
             <div class="commentText">
                 <p>"It's a fun summer ride, but it won't keep you coming back over and over."<br>
                     <span>posted on August 5, 2015 by Josh Terry</span></p>
-                <div class="badge"></div><div class="badge"></div>
+             <div class="earned-badges">  
+                <div class="badgebox">
+            <img class="badge" src="images/Floor_Lamps_two_legs.svg">
+        </div>
+         <div class="badgebox">
+            <img class="badge" src="images/female102.svg">
+        </div> 
+         <div class="badgebox">
+            <img class="badge" src="images/person242.png">   
+        </div>
+                </div>
             </div>
         </div></div>
         </div>
+-->
+        </div>
      <div class="miniWidget">
-        <h3>What do the badges mean?</h3>
+        <h2>What do the badges mean?</h2>
     <div class="had">
-            <h4>Feminist badges</h4>
+            <h3>FEMINIST BADGES</h3>
             <div class="badgebox">
                 <input type="checkbox" id="bechdel-badge" name="bechdel">
-                 <img class="badge" src="images/Blahblahblah_blah.gif">
+                 <img class="badge" src="images/standing75.png">
                 <label for="bechdel-badge">Bechdel Test</label>
                 <div class="badge-info">Do two named, female characters talk to each other about something other than a man?</div>
-            </div>
-            <div class="badgebox">
-                <input type="checkbox" id="strong-woman">
-                <img class="badge" src="images/gym42.png">
-                <label for="strong-woman">Strong Woman</label>
-                <div class="badge-info">Is there at least one really strong, powerful female character?
-                </div>
             </div>
 
             <div class="badgebox">
                 <input type="checkbox" id="mako-mori">
-                <img class="badge" src="images/girlbrain.jpg">
+                <img class="badge" src="images/person242.png">
                 <label for="mako-mori">Mako-Mori</label>
                 <div class="badge-info">Is there at least one lead female character who has her own narrative arc that is not about supporting a man’s story?
                 </div>
             </div>
             <div class="badgebox">
                 <input type="checkbox" id="women-in-charge">
-                <img class="badge" src="images/corporate_woman_6813944.jpg">                
+                <img class="badge" src="images/loudspeaker16.png">                
                 <label for="women-in-charge">Women in charge</label>
                 <div class="badge-info">Does the executive team (writers, directors, producers, etc) include women?
                 </div>
 
             </div>  
-            <div class="badgebox">
-                <input type="checkbox" id="sexy-lamp">
-                <img class="badge" src="images/leglamp.jpeg">
-                <label for="sexy-lamp">Not a sexy floor lamp</label>
-                <div class="badge-info">Are the lead famale characters more than "sexy floor lamp" props for the male characters?
-                </div>
-            </div>
+
             <div class="badgebox">
                 <input type="checkbox" id="gender-ratio">
-                <img class="badge" src="images/Random8-150ppp.jpg">
+                <img class="badge" src="images/female102.svg">
                 <label for="gender-ratio">Gender Ratio</label>
                 <div class="badge-info">Does the main cast have a balanced ratio of actors and actresses?
                 </div>
             </div><br>
             
-            <h4>Related badges</h4>
+            <h3>RELATED BADGES</h3>
     <div class="badgebox">
         <input type="checkbox" id="lgbt">
-        <img class="badge" src="images/rainbow.png">
+        <img class="badge" src="images/two15.png">
         <label for="lgbt">LGBTQ</label>
         <div class="badge-info">Is this movie LGBTQ friendly?
         </div>
     </div>    
-    <div class="badgebox">
-        <input type="checkbox" id="poc">
-        <img class="badge" src="images/stock-vector-vector-set-of-different-african-american-woman-app-icons-in-trendy-flat-style-259751516.jpg">
-        <label for="poc">People of color</label>
-        <div class="badge-info">Does this movie include actors of color?
-        </div>
-        
-    </div>
+
     <div class="badgebox">
         <input type="checkbox" id="diversity">
         <img class="badge" src="images/world91.png">
@@ -105,13 +162,13 @@
     </div>    
     <div class="badgebox">
         <input type="checkbox" id="disabilities">
-        <img class="badge" src="images/35957697-Disabled-sports-design-concept-with-handicapped-people-playing-football-fencing-cycling-icons-set-is-Stock-Vector.jpg">
+        <img class="badge" src="images/wheelchair10.png">
         <label for="disabilities">Positive Disabilities</label>
         <div class="badge-info"id="disabilities">Does this movie include actors or characters with disabilities in a positive way?
         </div>
     </div>        
 </div>
-         <h2><a href="#/login">Sign in</a> to assign badges!</h2>
+         <h2>Aren't those fun to click? Assign some badges and review some movies!<div ng-hide="loggedin"><br><a href="#/login">Sign in</a> to get started!</div></h2>
         </div>
     </div>
 </div>    

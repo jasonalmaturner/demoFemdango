@@ -7,14 +7,15 @@ home
     (badges explained)
     recent reviews
     
-    logout toggle
+   * logout toggle
     
 about
     content 
         femdango
         review methods
         resources
-    contact go live!
+    
+    * contact go live!
 
 reviews
     show review form when logged in
@@ -30,7 +31,52 @@ resolve
 scope.showspinner = false
       
       
-      
+    data!
+    
+
+   movie: {
+   id,     
+   badgesClickedPercent: {
+   "bechdelPercent" : = (timesClicked/timesReviewed), 
+   "strongPercent" : 0, 
+   "MakoPercent" : 0,
+   "execPercent" : 0,
+   "lampPercent" : 0,
+   "genderRatioPercent" : 0,
+   "lgbtPercent" : 0,
+   "pocPercent" : 0,
+   "diversityPercent" : 0;
+   "disabilitiesPercent": 0;
+   }
+   
+   
+   user: {
+   uid,
+   email:,
+   password:,
+   wishlist: [movie.id, movie.id ...],
+   favorites:[movie.id, movie.id ...],
+   }
+   
+   review: {
+   createdAd: ,
+   user.uid,
+   text:"review text",
+   badges: "0000000000"
+   }
+   var badges= {
+   "bechdel" : 0, 
+    "strong" : 1, 
+   "Mako" : 2,
+   "exec" : 3,
+   "lamp" : 4,
+   "genderRatio" : 5,
+   "lgbt" : 6,
+   "poc" : 7,
+   "diversity" : 8;
+   "disabilities": 8;
+assigns binary to badges at the index
+}
 To do eventually:
 
 index
@@ -52,7 +98,7 @@ home
 badges for 
     above and beyond bechdel
     surprising bechdel fail
-    lgbtq points 
+    lgbt points 
     poc points
 
 about

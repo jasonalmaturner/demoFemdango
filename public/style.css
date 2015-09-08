@@ -178,6 +178,9 @@ button:hover {
     opacity: .8;
 }
 
+.userSigninEmail {
+    text-align: right
+}
 .sidebar {
     width: 20%;
     float: left;
@@ -220,17 +223,22 @@ textarea:focus {
 
 img {
     object-fit:scale-down;
-    height: 250px;
+    height: 300px;
     width: auto
 }
 .earned-badges {
     
-    opacity: 0;
+   
     width: 165px;
-    margin-top: 0%;
+    margin-top: 0px;
+    display: flex;
+    flex-direction: row;
 
 }
 
+.movieImg > .earned-badges{
+    opacity: 0;
+}
 .movieImg:hover .earned-badges{
     opacity: 1;
 }
@@ -349,7 +357,6 @@ input[type=checkbox]:checked+.badge+label {
     background-color: #EEEEEE;
 }
 .badgebox {
-/*    margin:100px;*/
     float:left;
     position:relative;
     clear:both;
@@ -364,12 +371,17 @@ input[type=checkbox]:checked+.badge+label {
     position: absolute;
     text-align:justify;
     text-transform: uppercase;
-    top: -20px;
+    top: -40px;
     left:40px;
     display:none;
     padding:5px 20px;
     z-index: 5;
     
+}
+
+.wrapWidget .badge-info {
+    margin-top: -15px;
+    left: 0px;
 }
 
 .badge {
@@ -382,6 +394,20 @@ input[type=checkbox]:checked+.badge+label {
     background-color: #FFFFFF;
     border-radius: 50%;
     z-index: 3;
+    padding: 1px;
+    box-sizing: border-box;
+}
+.badge-big {
+    height: 100px;
+    width: 100px;
+    margin: 2px;
+    float: left;
+    background-position: -2px -1px;
+    border: 2px solid crimson;
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    z-index: 3;
+}
 }
 .show {
     margin-left: 30px;
@@ -394,6 +420,7 @@ input[type=checkbox]:checked+.badge+label {
     padding:10px;
     float: left;
 }
+/*
 .badges {
     margin: 50px auto;
     width: 50%;
@@ -401,15 +428,28 @@ input[type=checkbox]:checked+.badge+label {
     height: 30px;
     padding:10px;
 }
+*/
 .badge-box {
     float: left;
     margin-left:20px;
     width:40%
 }
+/*check label */
 label {
     height: 30px;
     width: 100%;
     position:relative;
     display:block;
     margin-top: 6px;
+}
+
+.odd {
+    background-color: #ffffff;
+    padding: 5%;
+    border-radius: 2px; 
+}
+.even {
+    background-color: #eeeeee;
+    padding: 5%;
+    border-radius: 2px; 
 }

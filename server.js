@@ -5,6 +5,7 @@ var util = require("util");
 
 var app = express();
 
+
 app.use(bodyParser.json());
 app.use(express.static(__dirname + "/public"));
 
@@ -13,7 +14,7 @@ app.get("/bechdel/:imdbID", function(req, res){
  console.log("imdbID:" + req.params.imdbID);
   request.get("http://www.omdbapi.com/?&y=&plot=short&r=json&tomatoes=true&apikey=44112dd6&i="+req.params.imdbID, function(error, response, body){
     if(error) res.status(500).json(err);
-      body = JSON.parse(body);
+      body = JSON.parse(body); 
       var imdbid = body.imdbID.replace("tt", "");
       
     request.get("http://bechdeltest.com/api/v1/getMovieByImdbId?imdbid="+imdbid, function(err, resp, bod){

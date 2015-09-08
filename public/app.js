@@ -48,6 +48,7 @@ app.config(function($routeProvider){
             templateUrl: "dashboard.html",
             controller: "loginCtrl"
 //            resolve: {
+                
 //                usernameRef: function(loginService, $route){
 //                    return loginService.getUser($route.current.params.userId);
 //                },

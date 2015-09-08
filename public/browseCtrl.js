@@ -1,4 +1,5 @@
-angular.module("femdangoApp").controller("browseCtrl", function($scope, mainService, $timeout) {
+angular.module("femdangoApp").controller("browseCtrl", function($scope, mainService, commentsService, $timeout) {
+
     
 $scope.searchMovies = function() {
 //    console.log($scope.searchMovieTitle);
@@ -52,7 +53,6 @@ $scope.searchMoviesPopular = function() {
     });
     });
 };
-
 $scope.searchMoviesPopular();
  
     $scope.userFavoritesList = function() {
@@ -68,16 +68,24 @@ $scope.searchMoviesPopular();
     })};
 $scope.searchMoviesComingSoon();  
     
-////    $scope.comments = $firebaseArray(commentsRef);
-////    
-////    $scope.comments.$loaded().then(function (comments) {
-////        console.log(comments)});
-////    
-////    $scope.createComment = function(username, comment) {
-////        $scope.comments.$add({
-////            username: usename,
-////            userMovieReview: userMovieReview
-////        });
-//    }
+$scope.searchMoviesByBadge = function() {
+//    redirected to popular movies until firebase data is connected;
+    mainService.searchMoviesPopular()
+    .then(function(response) {
+        $scope.reset = true;
+        $timeout(function(){
+            $scope.reset = false;
+            $scope.searchResults = response;
+        })
+       
+
+//        console.log(response);
+    })};    
+
+$scope.currentMovieId = commentsService.currentMovieId;
+
+$scope.comments = commentsService.comments;
+    
+$scope.badges = commentsService.badges;
       
 })

@@ -1,4 +1,4 @@
-angular.module("femdangoApp").controller("aboutCtrl", function($scope) {
+angular.module("femdangoApp").controller("aboutCtrl", function($scope, $firebaseObject, $firebaseArray) {
 $scope.femdango = true;
     
 $scope.femdangoShow = function(){
@@ -25,5 +25,18 @@ $scope.contactShow = function(){
     $scope.resources = false;
     $scope.bechdel = false;
 };
-//    $scope.sendEmail = function(){}
+
+    var url = "https://femdango.firebaseio.com";
+    var EmailsRef = new Firebase(url + "/contactMeEmails");
+    $scope.contactMeEmails = $firebaseArray(EmailsRef);  
+    
+$scope.sendEmail = function(emailAddress, emailText){
+        $scope.contactMeEmails.$add({
+            emailFrom: emailAddress,
+            emailBody: emailText
+        }).then(alert("Thanks for the note. We will get back to you soon!"));
+            
+    }
+    
+    
 })

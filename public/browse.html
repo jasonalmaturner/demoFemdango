@@ -1,5 +1,38 @@
 <div class="wrap">
-    <h1>How femdangGood are these movies?</h1>
+    <h1>Discover what movies earn which femdangBadges!</h1>
+    <div class="wrapWidget">
+        <div class="badgebox">
+            <img class="badge-big" src="images/standing75.png">
+            <label class="badge-info">Bechdel Test</label>
+        </div>
+        <div class="badgebox">
+            <img class="badge-big" src="images/person242.png">
+            <label class="badge-info">Mako-Mori</label>
+        </div>
+        <div class="badgebox">
+            <img class="badge-big" src="images/loudspeaker16.png">
+            <label class="badge-info">Women in charge</label>
+        </div>
+        <div class="badgebox">
+            <img class="badge-big" src="images/female102.svg">
+            <label class="badge-info">Gender Ratio</label>
+        </div>  
+        <div class="badgebox">
+            <img class="badge-big" src="images/two15.png">
+            <label class="badge-info">LGBTQ Friendly</label>
+        </div> 
+        <div class="badgebox">
+            <img class="badge-big" src="images/world91.png">
+            <label class="badge-info">Diversity</label>
+        </div>
+        <div class="badgebox">
+            <img class="badge-big" src="images/wheelchair10.png">
+            <label class="badge-info">Positive Disabilities</label>
+        </div>
+   
+</div>
+    <!--This slick-search will take in data="badge.id and filter popular movies by highest badgesClickedPercent. -->
+    <slick-search ng-if="!reset" data="popularMovies"></slick-search>
     <h3>Search for your favorite movies</h3>
     <form ng-submit="searchMovies()"><input type="search" ng-model="searchMovieTitle" placeholder="Search by title"></form>
     <slick-search ng-if="!reset" data="searchResults"></slick-search>
@@ -8,18 +41,10 @@
     <slick-search ng-if="!reset" data="inTheaters"></slick-search>
     <h3>COMING SOON</h3>
     <slick-search ng-if="!reset" data="comingSoon"></slick-search>
-    
+    <h3>MOST POPULAR</h3>
+    <slick-search ng-if="!reset" data="popularMovies"></slick-search>
 
     
-    <h3>FEMDANG!<a href="#/browse/FemDang">click for more films that go above and beyond the bechdel test</a></h3>
-<!--    <slick-search></slick-search>-->
-    <h3>BECHDEL FAIL <a href="#/browse/FemFail">click for more films that surprisingly FAIL the bechdel test</a></h3>
-    <!--    <slick-search></slick-search>-->
-    <h3>LGBTQ ALLY <a href="#/browse/LGBTQ">click for more films that have LGBTQ themes, characters, or actors</a></h3>
-<!--    <slick-search></slick-search>-->
-    <h3>PEOPLE OF COLOR <a href="#/browse/POC">click for more films that feature actors, directors, or characters of color</a></h3>
-    <!--    <slick-search></slick-search>-->
-    
-    
+   
     
 </div>
