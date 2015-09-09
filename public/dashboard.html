@@ -2,10 +2,11 @@
 <div class="userSigninEmail"><h3>signed in as: {{userData.password.email}}</h3></div>
 <h1>Profile</h1>
 <h3>Keep track of your favorite movies!</h3>
-<slick-favorites ng-if="!reset" data="userFavorites"></slick-favorites>
+<slick-favorites ng-if="!reset" data="userFavoritesList"></slick-favorites>
 <button class="js-add-slide">Add movies to your "Favorites List"</button>
+    {{userFavoritesList[0].title}}
 <button class="js-remove-slide">Remove movies from your "Favorites List"</button>
 <h3>Keep track of your wishlist!</h>
-<slick-favorites ng-if="!reset" data="wishlist"></slick-favorites>
+<slick-search ng-if="!reset" data="inTheaters"></slick-search>
 <button class="js-add-slide">Add movies to your "wishlist"</button>
 <button class="js-remove-slide">Remove movies from your "wishlist"</button>

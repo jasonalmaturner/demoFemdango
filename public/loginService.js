@@ -83,7 +83,7 @@ angular.module("femdangoApp").service("loginService", function($firebaseAuth) {
                         console.log("Error resettting password:", error);
                 }
             } else {
-                console.log("Password reset successful. Email will arrive shortly!");
+                alert("Password reset successful. Email will arrive shortly!");
                 that.resetPasswordForm = true;
             }
         });
@@ -94,9 +94,18 @@ angular.module("femdangoApp").service("loginService", function($firebaseAuth) {
         console.log("logged out");
     
     };
-
-   this.getThings = function(userId){
-       return $firebase(new Firebase(firebaseUrl + 'users/' + userId + '/things')).$asArray();
+//this will connect to movieCtrl and add/remove movie images (with links to movieIds) to the favorites array
+//   this.favoriteListManage = function(movieId) {
+//       if (favoritesList.movieId){
+//           $remove.movieId;
+//       }else {
+//           $add.movieId
+//       };
+//       
+//   }
+   //this will connect to dashboard and return an array of favorites, in a slick slider.
+    this.userGetFavoritesList = function(user){
+        return $firebase(new Firebase(firebaseUrl + 'users/' + userId + '/favorites')).$asArray();
   }
             
 });

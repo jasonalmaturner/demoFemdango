@@ -1,4 +1,4 @@
-//NOT IN USE
+
 
 var app = angular.module("femdangoApp").service("commentsService", function($location, $firebaseObject, $firebaseArray, $route){
     var that = this;
@@ -28,15 +28,17 @@ var app = angular.module("femdangoApp").service("commentsService", function($loc
                         
         }
     
-//    this.createComment = function() {
-//        var date = new Date();
-//        
-//        that.comments.$add({
-//            movieId: $route.current.params.id,
-//            createdAt : date.toLocaleString(),
-//            user : $scope.name,
-//            text : $scope.userMovieReview,
-//            badges:  $scope.badges
-//        }).then(console.log($scope.comments));  
-//    }; 
+this.getbadgeCount = function (){
+    
+    for (var i = 0; i < comments.length; i ++) {
+        for (var j = 0; j < badges.length; j++) {
+            if (comments[i].badges[j] === true) {
+                badgesCount++;
+            };
+        };
+    };
+};
+    
+ 
+    
 });

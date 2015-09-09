@@ -3,38 +3,37 @@
     <div class="wrapWidget">
         <div class="badgebox">
             <img class="badge-big" src="images/standing75.png">
-            <label class="badge-info">Bechdel Test</label>
+            <label class="badge-big-info">Bechdel Test</label>
         </div>
         <div class="badgebox">
             <img class="badge-big" src="images/person242.png">
-            <label class="badge-info">Mako-Mori</label>
+            <label class="badge-big-info">Mako-Mori</label>
         </div>
         <div class="badgebox">
             <img class="badge-big" src="images/loudspeaker16.png">
-            <label class="badge-info">Women in charge</label>
+            <label class="badge-big-info">Women in Charge</label>
         </div>
         <div class="badgebox">
             <img class="badge-big" src="images/female102.svg">
-            <label class="badge-info">Gender Ratio</label>
+            <label class="badge-big-info">Gender Ratio</label>
         </div>  
         <div class="badgebox">
             <img class="badge-big" src="images/two15.png">
-            <label class="badge-info">LGBTQ Friendly</label>
+            <label class="badge-big-info">LGBT Friendly</label>
         </div> 
         <div class="badgebox">
             <img class="badge-big" src="images/world91.png">
-            <label class="badge-info">Diversity</label>
+            <label class="badge-big-info">Diversity</label>
         </div>
         <div class="badgebox">
             <img class="badge-big" src="images/wheelchair10.png">
-            <label class="badge-info">Positive Disabilities</label>
+            <label class="badge-big-info">Positive Disabilities</label>
         </div>
    
-</div>
+    </div>
     <!--This slick-search will take in data="badge.id and filter popular movies by highest badgesClickedPercent. -->
     <slick-search ng-if="!reset" data="popularMovies"></slick-search>
-    <h3>Search for your favorite movies</h3>
-    <form ng-submit="searchMovies()"><input type="search" ng-model="searchMovieTitle" placeholder="Search by title"></form>
+    <form ng-submit="searchMovies()"><input class="movieTitleSearch" type="search" ng-model="searchMovieTitle" placeholder="Search for movies by title!"></form>
     <slick-search ng-if="!reset" data="searchResults"></slick-search>
     
     <h3>NOW PLAYING IN THEATERS</h3>

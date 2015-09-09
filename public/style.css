@@ -352,9 +352,16 @@ input[type=checkbox]:checked+.badge+label {
 .badgebox:hover .badge-info {
     display:block;
 }
+.badgebox:hover .badge-big-info {
+    display: block;
+}
+.badgebox:hover .badge-big {
+    display: none;
+}
 
 .badgebox:hover .badge {
     background-color: #EEEEEE;
+    
 }
 .badgebox {
     float:left;
@@ -379,6 +386,25 @@ input[type=checkbox]:checked+.badge+label {
     
 }
 
+.badge-big-info{
+    font-size: 13px;
+    text-align:center;
+    text-transform: uppercase;
+    padding: 20px;
+    display:none;
+    z-index: 5;
+    height: 100px;
+    width: 100px;
+    margin: 2px;
+    float: left;
+    background-position: -2px -1px;
+    border: 2px solid crimson;
+    background-color: crimson;
+    color:#ffffff;
+    border-radius: 50%;
+    box-sizing: border-box;
+
+}
 .wrapWidget .badge-info {
     margin-top: -15px;
     left: 0px;
@@ -408,6 +434,10 @@ input[type=checkbox]:checked+.badge+label {
     border-radius: 50%;
     z-index: 3;
 }
+
+.movieTitleSearch {
+    margin-top: 5%;
+    width: 50%;
 }
 .show {
     margin-left: 30px;
@@ -434,7 +464,7 @@ input[type=checkbox]:checked+.badge+label {
     margin-left:20px;
     width:40%
 }
-/*check label */
+
 label {
     height: 30px;
     width: 100%;

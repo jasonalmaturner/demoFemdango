@@ -4,8 +4,8 @@ To do now:
 
 home
     favorites gallery
-    (badges explained)
-    recent reviews
+   * (badges explained)
+   * recent reviews
     
    * logout toggle
     
@@ -18,17 +18,32 @@ about
     * contact go live!
 
 reviews
-    show review form when logged in
-    submit reviews
-    show reviews on movie page
-    show recent reviews on home page
-
+    * show review form when logged in
+    * submit reviews
+    * show reviews on movie page
+    * show recent reviews on home page
+    
+    tally badge % and reveal top badge count % in slider 
+    
+dashboard
+    * add favorites array 
+    add slider
+     - hover to reveal remove icon
+     - ng-change to add from movie page
+    
+   * add wishlist array 
+    add slider
+     - hover to reveal remove icon
+     - hover to reveal add to favorites icon
+     -ng-change to add from movie page
+     
+     
 Buy tickets!
     
     
-ng-click scope.showspinner= true
-resolve 
-scope.showspinner = false
+*ng-click scope.showspinner= true
+*resolve 
+*scope.showspinner = false
       
       
     data!
@@ -95,11 +110,7 @@ home
      preofessional reviews
      links to articles
 
-badges for 
-    above and beyond bechdel
-    surprising bechdel fail
-    lgbt points 
-    poc points
+
 
 about
 x    ng-show() to toggle between views
@@ -118,15 +129,19 @@ x    bechdel api
     link TMDB API to bechdel!!!!!!!!!!
     insert bechdel rating
     change class if bechdel passes
-
+    stop slick on hover;
+    
+    
+    
 Movie page
-    link "searchMovie" function to page data on load, synch. 
-    recent comments box
-    nominate for badges
+   * link "searchMovie" function to page data on load, synch. 
+   * recent comments box
+   * nominate for badges
+    ng-click so wish List/favorites values are saved for the user. 
+    pause slick when active link
     
     
-    
-sign in 
+* sign in 
     set up authentication
     create comment section
     create favorites list

@@ -57,11 +57,9 @@ app.directive("slickFavorites", function($timeout){
             });
         });
     },
-     controller: function($scope) {
-         
-     },
+     controller: function($scope){},
      
-     templateUrl: "FavoritesGallery.html"
+     templateUrl: "favoritesGallery.html"
  }
  });
 

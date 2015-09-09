@@ -27,26 +27,26 @@ app.config(function($routeProvider){
                 }
             }
         })
-        .when("/comments", {
-            templateUrl: "comments.html",
-            controller: "commentsCtrl",
-            resolve: {
-                commentsRef: function (commentsService) {
-                    return commentsService.getComments;
-                }
-            }
-        })
+//        .when("/comments", {
+//            templateUrl: "comments.html",
+//            controller: "commentsCtrl",
+//            resolve: {
+//                commentsRef: function (commentsService) {
+//                    return commentsService.getComments;
+//                }
+//            }
+//        })
         .when("/login", {
             templateUrl: "login.html",
             controller: "loginCtrl"
         })
-        .when("/passwordReset", {
-            templateUrl: "passwordReset.html",
-            controller: "loginCtrl"
-        })
+//        .when("/passwordReset", {
+//            templateUrl: "passwordReset.html",
+//            controller: "loginCtrl"
+//        })
         .when("/dashboard/:userId", {
             templateUrl: "dashboard.html",
-            controller: "loginCtrl"
+            controller: "browseCtrl"
 //            resolve: {
                 
 //                usernameRef: function(loginService, $route){
@@ -62,7 +62,7 @@ app.config(function($routeProvider){
             controller: "browseCtrl",
             resolve: {
                 commentsRef: function (commentsService) {
-                    return commentsService.getComments;
+                    return commentsService.getbadgeCount;
                 }
             }
         })

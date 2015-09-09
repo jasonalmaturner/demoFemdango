@@ -4,14 +4,14 @@
         <img class="poster" src="{{movieData.posterUrl}}" >
         <div class="had" id="user-lists">
             <div class="badgebox" ng-show="loggedin">
-                <input type="checkbox" id="favorite" ng-model="badges.favorite">
+                <input type="checkbox" id="favorite" value="movieId" ng-model="user.favorite" ng-click="favoriteListManage()">
                  <img class="badge" src="images/heart8.png">
                 <label for="favorite">Add to favorites</label>
             </div>
             <div class="badgebox" ng-show="loggedin">
-                <input type="checkbox" id="wishList" ng-model="badges.wishList">
+                <input type="checkbox" ng-click="wishListManage()" id="wish" value="movieId" ng-model="user.wish">
                  <img class="badge" src="images/food48.png">
-                <label for="wishList">Add to wishlist</label>
+                <label for="wish">Add to wishlist</label>
             </div>
         </div>
         <form ng-show="loggedin" name="newComment">

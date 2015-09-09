@@ -1,5 +1,9 @@
     angular.module("femdangoApp").service("mainService", function($http, $q) {
-//This function inputs data onto the movie page
+
+        
+        var that = this;
+        
+        //This function inputs data onto the movie page
         this.getMovie = function(imdbId) {
             console.log("imdbId:", imdbId);
             var dfd = $q.defer()
@@ -43,6 +47,7 @@
         
 //This function checks to see if movie images load
         function loadImage(movie){
+            that.movie = movie;
             var dfd = $q.defer();
             var imageUrl = "https://image.tmdb.org/t/p/w185" + movie.poster_path;
             var image = $(new Image()).prop('src', imageUrl);
@@ -101,9 +106,7 @@
                 var nextweek = new Date(today.getFullYear(), today.getMonth(), today.getDate()+7);
                 return nextweek.toISOString().split('T')[0];   
             };
-//           var altNextWeek = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate()+7).toISOString().split('T')[0];
-//            console.log("alt:", altNextWeek);
-            
+
             function dateInTwoMonths(){
                 var today = new Date();
                 var dateInTwoMonths = new Date(today.getFullYear(), today.getMonth()+2, today.getDate()+7);
@@ -134,9 +137,15 @@
         return dfd.promise
     }; 
 
-//This function adds muser favorites to slider
-        this.userGetFavoritesList = function(title) {
-            var userFavorites = [];        
+//This function adds user favorites to slider
+        this.userGetFavoritesList = function() {
+          
+            var commentsRef = new Firebase(url + "/comments");
+
+            this.comments = $firebaseArray(commentsRef);
+          
+            };
+        this.userGetWishList = function() {
         }
         
     })

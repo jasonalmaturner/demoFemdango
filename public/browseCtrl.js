@@ -1,8 +1,17 @@
-angular.module("femdangoApp").controller("browseCtrl", function($scope, mainService, commentsService, $timeout) {
+angular.module("femdangoApp").controller("browseCtrl", function($scope, mainService, commentsService, loginService, $timeout, $location, $firebaseObject, $firebaseArray, $route) {
+    
+$scope.userData = loginService.user;
+
+ var url = "https://femdango.firebaseio.com";
+    var favoritesRef = new Firebase(url + "/users/" + $scope.userData.uid + "/favorites");
+    var wishListRef = new Firebase(url + "/users/" + $scope.userData.uid + "/wishList");
+    $scope.userFavoritesList = $firebaseArray(favoritesRef);
+    $scope.userWishList = $firebaseArray(wishListRef);   
+    console.log($scope.userFavoritesList);
+    console.log($scope.userWishList);
 
     
 $scope.searchMovies = function() {
-//    console.log($scope.searchMovieTitle);
     mainService.searchMovies($scope.searchMovieTitle)
     .then(function(response) {
         $scope.reset = true;
@@ -11,7 +20,6 @@ $scope.searchMovies = function() {
             $scope.searchResults = response;
         })
 
-//        console.log(response);
     })};
 
 $scope.MoviesInTheaters = function() {
@@ -22,6 +30,7 @@ $scope.MoviesInTheaters = function() {
         $timeout(function(){
             $scope.reset = false;
             $scope.inTheaters = response.results;
+            console.log($scope.inTheaters);
         })
         
 
@@ -66,7 +75,7 @@ $scope.searchMoviesPopular();
         
 
     })};
-$scope.searchMoviesComingSoon();  
+$scope.userFavoritesList();  
     
 $scope.searchMoviesByBadge = function() {
 //    redirected to popular movies until firebase data is connected;
@@ -79,7 +88,6 @@ $scope.searchMoviesByBadge = function() {
         })
        
 
-//        console.log(response);
     })};    
 
 $scope.currentMovieId = commentsService.currentMovieId;

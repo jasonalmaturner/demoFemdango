@@ -4,11 +4,10 @@ var request = require("request");
 var util = require("util");
 
 var app = express();
-
-
+  
+ 
 app.use(bodyParser.json());
 app.use(express.static(__dirname + "/public"));
-
 
 app.get("/bechdel/:imdbID", function(req, res){
  console.log("imdbID:" + req.params.imdbID);
@@ -45,7 +44,7 @@ app.get("/bechdel/:imdbID", function(req, res){
               posterUrl: body.Poster,
               //trailersArray: body.trailers.youtube
           })
-    
+     
       })
     })
   })
