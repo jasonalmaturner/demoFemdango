@@ -18,7 +18,7 @@ app.directive("slickFavorites", function($timeout){
                 slidesToScroll: 4,
                 autoplay: true,
                 responsive: [{
-                    breakpoint: 1024,
+                    breakpoint: 1108,
                     settings: {
                         slidesToShow: 3,
                         slidesToScroll: 3,
@@ -28,7 +28,7 @@ app.directive("slickFavorites", function($timeout){
                 
                 },
                 {
-                    breakpoint: 600,
+                    breakpoint: 860,
                     settings: {
                         slidesToShow: 2,
                         slidesToScroll: 2,
@@ -37,7 +37,7 @@ app.directive("slickFavorites", function($timeout){
                     }
                 },
                 {
-      breakpoint: 480,
+      breakpoint: 640,
       settings: {
         slidesToShow: 1,
         slidesToScroll: 1
@@ -87,7 +87,7 @@ app.directive("slickSearch", function($timeout){
             autoplay: true,
             
             responsive: [{
-                breakpoint: 1024,
+                breakpoint: 1108,
                 settings: {
                     slidesToShow: 3,
                     slidesToScroll: 3,
@@ -96,7 +96,7 @@ app.directive("slickSearch", function($timeout){
                 }
             },
             {
-                breakpoint: 600,
+                breakpoint: 860,
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 2,

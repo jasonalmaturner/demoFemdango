@@ -4,7 +4,7 @@ var app = angular.module("femdangoApp").service("commentsService", function($loc
     var that = this;
     
     this.currentMovieId = $route.current.params.id;
-      console.log($route.current.params.name);      
+//      console.log(this.currentMovieId);      
     
     var url = "https://femdango.firebaseio.com";
     var commentsRef = new Firebase(url + "/comments");
@@ -25,6 +25,7 @@ var app = angular.module("femdangoApp").service("commentsService", function($loc
             disabilities: false
                         
         }
+    
   
    //This function counts how many badges reviewed movies earn 
 this.getbadgeCount = function (){
@@ -49,15 +50,33 @@ this.getbadgeCount = function (){
             };
         };
     };    
-//        console.log("earned badges", earnedBadgeMovies);
+        console.log("earned badges", earnedBadgeMovies, that.currentMovieId);
         that.earnedBadgeMovies = earnedBadgeMovies;
-});
-           
+        getBadgeForMovie(); 
+    });
 };
 this.getbadgeCount();
-    
-    
-    
- 
-    
+
+    //this function creates an array of badges that have multiple (1 or more for now) nominations for the same badges
+              that.earnedBadgesArr= [];
+
+      var getBadgeForMovie = function() {
+            for (movie in that.earnedBadgeMovies) {
+//                console.log(movie, that.currentMovieId);
+                if (movie === that.currentMovieId) {
+                    console.log("match!");
+                    for (badge in that.earnedBadgeMovies[movie]) {
+                        console.log(badge, that.earnedBadgeMovies[movie][badge]);
+                        if (that.earnedBadgeMovies[movie][badge] >= 1 && badge !== undefined) {
+                            that.earnedBadgesArr.push(badge);
+//                        console.log(that.badge, that.badgeValue);
+                        }
+                    }
+                }else {
+                    console.log("no match");
+                }
+            } console.log(that.earnedBadgesArr); 
+        }
+
+            
 });

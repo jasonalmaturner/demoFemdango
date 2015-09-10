@@ -84,8 +84,22 @@ $scope.comments = commentsService.comments;
     
 $scope.badges = commentsService.badges;
 
-$scope.getbadgeCount = function(){
-    commentsService.getbadgeCount();
-}
+
+
+// $scope.getBadgeMovies = function () {
+//        $scope.earnedBadgeMovies = commentsService.earnedBadgeMovies;
+//    console.log("hello", $scope.earnedBadgeMovies);
+//    };
+//    $scope.getBadgeMovies();  
     
-})
+// $scope.getBadgeForMovie = function () {
+//        for (movie in commentsService.earnedBadgeMovies) {
+//            console.log(movie);
+//            if (movie == $scope.currentMovieId) {
+//                for (badge in movie) {
+//                    if (badge 
+//    
+//    };
+//    $scope.getBadgeMovies();    
+
+});

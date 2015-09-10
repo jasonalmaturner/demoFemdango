@@ -15,13 +15,13 @@ angular.module("femdangoApp").controller("movieCtrl", function($scope, mainServi
     $scope.userFavoritesList = $firebaseArray(favoritesRef);
     $scope.userWishList = $firebaseArray(wishListRef);
      
-    console.log($scope.userFavoritesList);
+//    console.log($scope.userFavoritesList);
     
     $scope.currentMovieId = commentsService.currentMovieId;
 
     $scope.comments = commentsService.comments;
     $scope.comments.$loaded().then(function (comments) {
-            console.log(comments);
+//            console.log(comments);
         });    
     $scope.badges = commentsService.badges;
 
@@ -78,33 +78,12 @@ angular.module("femdangoApp").controller("movieCtrl", function($scope, mainServi
             wishListRemoveRef.remove();
         }
     };
-    
-//$scope.getFavoritesList = function() {
-////    console.log($scope.searchMovieTitle);
-//    commentsService.userGetFavoritesList()
-//    .then(function(response) {
-//        $scope.reset = true;
-//        $timeout(function(){
-//            $scope.reset = false;
-//            $scope.userFavorites = response.results;
-//        })
-//    })};
-//    $scope.getFavoritesList();
-//      $scope.userFavoritesList = $firebaseArray(favoritesRef);
-//
-//$scope.getwishList = function() {
-////    console.log($scope.searchMovieTitle);
-//    commentsService.userGetWishList()
-//    .then(function(response) {
-//        $scope.reset = true;
-//        $timeout(function(){
-//            $scope.reset = false;
-//            $scope.wishList = response.results;
-//            console.log($scope.wishList);
-//        })
-//    })};
-//    $scope.getwishList();
-        
+
+//    $scope.getEarnedBadges = function() {
+//        return commentsService.earnedBadgesArr;
+//    };
+//    console.log($scope.getEarnedBadges());
+ 
     
     
 });

@@ -93,7 +93,12 @@
         </form>
     </div> 
     <div class="movieInfo">
-     
+     <div class="earned-badges" ng-repeat="badge in earnedBadges">
+            <div class="badgebox">
+                 <img class="badge" src="images/standing75.png">
+            </div>
+            
+        </div>
     <h1>{{movieData.title}}</h1>
     <h3>{{movieData.year}} | {{movieData.rated}}| {{movieData.runtime}}| {{movieData.genre}}</h3>
     <h2>Director:</h2> <h3> {{movieData.director}}</h3><h2>Lead Actors:</h2> <h3> {{movieData.actors}}</h3>

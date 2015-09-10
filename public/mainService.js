@@ -24,7 +24,7 @@
             $http.get("http://api.themoviedb.org/3/movie/" + id + "?api_key=df49ca00f987ca4b363f4e6291e80c15&page=1&append_to_response=trailers&include_video=true")
             .then(function(response) {
                 this.getMovie(response.data.imdb_id).then(function(movieData){
-                    console.log("this is movie data:", movieData)
+//                    console.log("this is movie data:", movieData)
                     dfd.resolve(movieData);
                 })
 //                dfd.resolve(response.data.imdb_id);    
