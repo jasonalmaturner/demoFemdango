@@ -1,5 +1,6 @@
 <div class="wrap">
     <h1>Discover what movies earn which femdangBadges!</h1>
+<!--
     <div class="wrapWidget">
         <div class="badgebox">
             <img class="badge-big" src="images/standing75.png">
@@ -31,11 +32,11 @@
         </div>
    
     </div>
-    <!--This slick-search will take in data="badge.id and filter popular movies by highest badgesClickedPercent. -->
-    <slick-search ng-if="!reset" data="popularMovies"></slick-search>
+-->
+   
     <form ng-submit="searchMovies()"><input class="movieTitleSearch" type="search" ng-model="searchMovieTitle" placeholder="Search for movies by title!"></form>
     <slick-search ng-if="!reset" data="searchResults"></slick-search>
-    
+     <!--This slick-search will take in data="badge.id and filter popular movies by highest badgesClickedPercent. -->
     <h3>NOW PLAYING IN THEATERS</h3>
     <slick-search ng-if="!reset" data="inTheaters"></slick-search>
     <h3>COMING SOON</h3>

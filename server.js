@@ -19,7 +19,7 @@ app.get("/bechdel/:imdbID", function(req, res){
     request.get("http://bechdeltest.com/api/v1/getMovieByImdbId?imdbid="+imdbid, function(err, resp, bod){
         if(error) res.status(501).json(err);
         bod = JSON.parse(bod);
-        
+          
       request.get("http://img.omdbapi.com/?apikey=44112dd6&h=250&i=" + imdbid, function(err, respo, image){
 //          console.log(body);
           res.json({

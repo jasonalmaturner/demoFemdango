@@ -1,12 +1,38 @@
 <div class="wrap">
 <div class="userSigninEmail"><h3>signed in as: {{userData.password.email}}</h3></div>
 <h1>Profile</h1>
-<h3>Keep track of your favorite movies!</h3>
-<slick-favorites ng-if="!reset" data="userFavoritesList"></slick-favorites>
-<button class="js-add-slide">Add movies to your "Favorites List"</button>
-    {{userFavoritesList[0].title}}
-<button class="js-remove-slide">Remove movies from your "Favorites List"</button>
-<h3>Keep track of your wishlist!</h>
-<slick-search ng-if="!reset" data="inTheaters"></slick-search>
+    <h3>Keep track of your favorite movies!</h3> 
+
+<div class="movieInfo" ng-init="checked = false" class="movieImg" ng-repeat="movie in userFavoritesList">
+    <div class="loading" ng-show="checked">
+    </div>
+    <a  ng-click="checked = true" href={{"#/browse/"+movie.movieId}}>
+<!--        <img ng-src="{{movie.poster}}">-->
+        {{movie.title}}
+    </a>
+
+    
+</div>
+    
+    
+    
+    
+<!--<slick-favorites ng-if="!reset" data="userFavoritesList"></slick-favorites>-->
+<!--<button class="js-add-slide">Add movies to your "Favorites List"</button>-->
+
+<!--<button class="js-remove-slide">Remove movies from your "Favorites List"</button>-->
+<h3>Keep track of your wishlist!</h3>
+
+    <div class="movieInfo" ng-init="checked = false" class="movieImg" ng-repeat="movie in userWishList">
+    <div class="loading" ng-show="checked">
+    </div>
+    <a  ng-click="checked = true" href={{"#/browse/"+movie.movieId}}>
+<!--        <img ng-src="{{movie.poster}}">-->
+        {{movie.title}}
+    </a>
+
+    
+</div>
+<!--<slick-favorites ng-if="!reset" data="userWishList"></slick-favorites>
 <button class="js-add-slide">Add movies to your "wishlist"</button>
-<button class="js-remove-slide">Remove movies from your "wishlist"</button>
+<button class="js-remove-slide">Remove movies from your "wishlist"</button>-->

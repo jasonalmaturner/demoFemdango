@@ -1,7 +1,38 @@
-
-<div class="wrap"><h1>Popular movies on our radar:</h1>
-    
-<slick-search ng-if="!reset" data="popularMovies"></slick-search>
+ <div class="wrap">
+     <div class="wrapWidget">
+        <div class="badgebox">
+            <img class="badge-big" src="images/standing75.png">
+            <label class="badge-big-info">Bechdel Test</label>
+        </div>
+        <div class="badgebox">
+            <img class="badge-big" src="images/person242.png">
+            <label class="badge-big-info">Mako-Mori</label>
+        </div>
+        <div class="badgebox">
+            <img class="badge-big" src="images/loudspeaker16.png">
+            <label class="badge-big-info">Women in Charge</label>
+        </div>
+        <div class="badgebox">
+            <img class="badge-big" src="images/female102.svg">
+            <label class="badge-big-info">Gender Ratio</label>
+        </div>  
+        <div class="badgebox">
+            <img class="badge-big" src="images/two15.png">
+            <label class="badge-big-info">LGBT Friendly</label>
+        </div> 
+        <div class="badgebox">
+            <img class="badge-big" src="images/world91.png">
+            <label class="badge-big-info">Diversity</label>
+        </div>
+        <div class="badgebox">
+            <img class="badge-big" src="images/wheelchair10.png">
+            <label class="badge-big-info">Positive Disabilities</label>
+        </div>
+   
+    </div>
+<h1>How many femBadges do they get?</h1>
+<h3>NOW PLAYING IN THEATERS</h3>    
+<slick-search ng-if="!reset" data="inTheaters"></slick-search>
 
     <div class="wrapWidget">
         <div class="miniWidget">
@@ -9,7 +40,7 @@
         <h2>RECENT REVIEWS</h2>
         
    <div ng-repeat="comment in comments | orderBy: 'createdAt': reverse | limitTo: 5"  ng-class-odd="'odd'" ng-class-even="'even'">
-          <h2><a href="#/browse/" + {{comment.movieId}}>{{comment.movieTitle}}</a> </h2>
+          <h2><a href="#/browse/{{comment.movieId}}">{{comment.movieTitle}}</a> </h2>
         <div class="earned-badges">
             <div class="badgebox" ng-show={{comment.badges.bechdel}}>
                  <img class="badge" src="images/standing75.png">
@@ -50,22 +81,22 @@
             <div class="badgebox">
                 <input type="checkbox" id="bechdel-badge" name="bechdel">
                  <img class="badge" src="images/standing75.png">
-                <label for="bechdel-badge">Bechdel Test</label>
-                <div class="badge-info">Do two named, female characters talk to each other about something other than a man?</div>
+                <label class="home-badge" for="bechdel-badge">Bechdel Test</label>
+                <div class="badge-info">Two named women talk to each other about something other than a man</div>
             </div>
 
             <div class="badgebox">
                 <input type="checkbox" id="mako-mori">
                 <img class="badge" src="images/person242.png">
-                <label for="mako-mori">Mako-Mori</label>
-                <div class="badge-info">Is there at least one lead female character who has her own narrative arc that is not about supporting a man’s story?
+                <label class="home-badge" class="home-badge" for="mako-mori">Mako-Mori</label>
+                <div class="badge-info">At least one lead female character has her own narrative arc that doesn't revolve around a man's story
                 </div>
             </div>
             <div class="badgebox">
                 <input type="checkbox" id="women-in-charge">
                 <img class="badge" src="images/loudspeaker16.png">                
-                <label for="women-in-charge">Women in charge</label>
-                <div class="badge-info">Does the executive team (writers, directors, producers, etc) include women?
+                <label class="home-badge" for="women-in-charge">Women in charge</label>
+                <div class="badge-info">The executive team includes at least one woman
                 </div>
 
             </div>  
@@ -73,8 +104,8 @@
             <div class="badgebox">
                 <input type="checkbox" id="gender-ratio">
                 <img class="badge" src="images/female102.svg">
-                <label for="gender-ratio">Gender Ratio</label>
-                <div class="badge-info">Does the main cast have a balanced ratio of actors and actresses?
+                <label class="home-badge" for="gender-ratio">Gender Ratio</label>
+                <div class="badge-info">The main cast has at least a 1:3 ratio of lead actresses to actors
                 </div>
             </div><br>
             
@@ -82,27 +113,27 @@
     <div class="badgebox">
         <input type="checkbox" id="lgbt">
         <img class="badge" src="images/two15.png">
-        <label for="lgbt">LGBTQ</label>
-        <div class="badge-info">Is this movie LGBTQ friendly?
+        <label class="home-badge" for="lgbt">LGBT</label>
+        <div class="badge-info">Features at least one LGBT character or refers positively/productively to LGBT issues
         </div>
     </div>    
 
     <div class="badgebox">
         <input type="checkbox" id="diversity">
         <img class="badge" src="images/world91.png">
-        <label for="diversity">Diversity</label>
-        <div class="badge-info" id="diversity">Does this movie include accurate and/or positive representations of diverse cultures or countries?
+        <label class="home-badge" for="diversity">Diversity</label>
+        <div class="badge-info" id="diversity">Includes at least one named character who acurately and productively represents a diverse ethnicity, culture, or country
         </div>
     </div>    
     <div class="badgebox">
         <input type="checkbox" id="disabilities">
         <img class="badge" src="images/wheelchair10.png">
-        <label for="disabilities">Positive Disabilities</label>
-        <div class="badge-info"id="disabilities">Does this movie include actors or characters with disabilities in a positive way?
+        <label class="home-badge" for="disabilities">Positive Disabilities</label>
+        <div class="badge-info"id="disabilities">Includes at least one actor or character with disabilities in a positive and productive way
         </div>
     </div>        
 </div>
-         <h2>Aren't those fun to click? Assign some badges and review some movies!<div ng-hide="loggedin"><br><a href="#/login">Sign in</a> to get started!</div></h2>
+         <h2>Click on a movie to assign some badges and write a femReview!<div ng-hide="loggedin"><br><a href="#/login">Sign in</a> to get started!</div></h2>
         </div>
     </div>
 </div>    

@@ -1,21 +1,11 @@
-<div ng-init="checked = false" class="movieImg" ng-repeat="movie in data">
+<div class="movieInfo" ng-init="checked = false" class="movieImg" ng-repeat="movie in data">
     <div class="loading" ng-show="checked">
     </div>
-    <a  ng-click="checked = true" href={{"#/browse/"+movie.id}}>
-        <img ng-src="https://image.tmdb.org/t/p/w185{{movie.poster_path}}">
+    <a  ng-click="checked = true" href={{"#/browse/"+movie.movieId}}>
+<!--        <img ng-src="{{movie.poster}}">-->
+        {{movie.title}}
     </a>
-        
-    <div class="earned-badges">
-        <div class="badgebox">
-            <img class="badge" src="images/loudspeaker16.png">
-        </div>
-        <div class="badgebox">
-            <img class="badge" src="images/female102.svg">
-        </div> 
-        <div class="badgebox">
-            <img class="badge" src="images/two15.png">   
-        </div>
-    </div>
+
     
 </div>
 

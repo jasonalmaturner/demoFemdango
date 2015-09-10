@@ -64,19 +64,7 @@ $scope.searchMoviesPopular = function() {
 };
 $scope.searchMoviesPopular();
  
-    $scope.userFavoritesList = function() {
-    mainService.userGetFavoritesList()
-    .then(function(response) {
-        $scope.reset = true;
-        $timeout(function(){
-            $scope.reset = false;
-            $scope.userFavorites = response.results;
-        })
-        
-
-    })};
-$scope.userFavoritesList();  
-    
+    //Not yet functioning. This will allow users to click on a badge on the home page, and see popular movies
 $scope.searchMoviesByBadge = function() {
 //    redirected to popular movies until firebase data is connected;
     mainService.searchMoviesPopular()
@@ -95,5 +83,9 @@ $scope.currentMovieId = commentsService.currentMovieId;
 $scope.comments = commentsService.comments;
     
 $scope.badges = commentsService.badges;
-      
+
+$scope.getbadgeCount = function(){
+    commentsService.getbadgeCount();
+}
+    
 })

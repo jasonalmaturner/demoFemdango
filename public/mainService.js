@@ -99,8 +99,7 @@
 
 //This function displays movies that are coming soon to theaters
         this.searchMoviesComingSoon = function(title) {
-//            var dateToday = new Date ().toISOString().split('T')[0];
-//            console.log(dateToday);
+
             function nextweek(){
                 var today = new Date();
                 var nextweek = new Date(today.getFullYear(), today.getMonth(), today.getDate()+7);
@@ -137,15 +136,5 @@
         return dfd.promise
     }; 
 
-//This function adds user favorites to slider
-        this.userGetFavoritesList = function() {
-          
-            var commentsRef = new Firebase(url + "/comments");
 
-            this.comments = $firebaseArray(commentsRef);
-          
-            };
-        this.userGetWishList = function() {
-        }
-        
     })

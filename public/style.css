@@ -107,7 +107,7 @@ a:hover {
     flex-direction: row;
     width: 100%;
     box-sizing: border-box;
-    margin: 5% auto;
+    margin: 0% auto;
     padding: 20px;
 }
 .miniWidget {
@@ -349,6 +349,9 @@ input[type=checkbox]:checked+.badge+label {
     color: crimson;
 }
 
+.badgebox:hover label.home-badge {
+    display:none;
+}
 .badgebox:hover .badge-info {
     display:block;
 }
@@ -370,18 +373,16 @@ input[type=checkbox]:checked+.badge+label {
 }
 
 .badge-info{
+    height: 30px;
     width: 100%;
-    background:#FFFFFF;
-    border: 5px solid #DFDFDF;
-    color: #717171;
+    position:relative;
+    display:block;
+    margin-top: 6px;
+    color: crimson;
     font-size: 13px;
-    position: absolute;
-    text-align:justify;
-    text-transform: uppercase;
-    top: -40px;
-    left:40px;
+    margin-left: 5px;
     display:none;
-    padding:5px 20px;
+    padding:10px 5px 5px 5px;
     z-index: 5;
     
 }
@@ -464,6 +465,13 @@ input[type=checkbox]:checked+.badge+label {
     margin-left:20px;
     width:40%
 }
+
+.home-label {
+height: 30px;
+    width: 100%;
+    position:relative;
+    display:block;
+    margin-top: 6px;}
 
 label {
     height: 30px;

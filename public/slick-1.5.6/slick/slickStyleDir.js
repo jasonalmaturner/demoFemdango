@@ -57,8 +57,14 @@ app.directive("slickFavorites", function($timeout){
             });
         });
     },
-     controller: function($scope){},
-     
+     controller: function($scope, $firebaseArray, loginService) {
+        $scope.userData = loginService.user;
+        var url = "https://femdango.firebaseio.com";
+        var favoritesRef = new Firebase(url + "/users/" + $scope.userData.uid + "/favorites");
+        var wishListRef = new Firebase(url + "/users/" + $scope.userData.uid + "/wishList");
+        $scope.userFavoritesList = $firebaseArray(favoritesRef);
+        $scope.userWishList = $firebaseArray(wishListRef);   
+    },
      templateUrl: "favoritesGallery.html"
  }
  });
@@ -112,10 +118,15 @@ app.directive("slickSearch", function($timeout){
         });
        
      },
-     controller: function($scope) {
+     controller: function($scope, $firebaseArray, loginService) {
+        $scope.userData = loginService.user;
+        var url = "https://femdango.firebaseio.com";
+        var favoritesRef = new Firebase(url + "/users/" + $scope.userData.uid + "/favorites");
+        var wishListRef = new Firebase(url + "/users/" + $scope.userData.uid + "/wishList");
+        $scope.userFavoritesList = $firebaseArray(favoritesRef);
+        $scope.userWishList = $firebaseArray(wishListRef);   
+    },
 
-     },
-     
      templateUrl: "resultsGallery.html"
  }
  });

@@ -40,6 +40,8 @@ angular.module("femdangoApp").controller("movieCtrl", function($scope, mainServi
     
     //move to loginService
     $scope.favoriteListManage = function(){
+        
+        
     var updateFavoritesRef = favoritesRef.child($route.current.params.id);
         console.log($scope.user.favorite);
         if ($scope.user.favorite) {
